@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav from './components/Nav';
 
 //Styles
 import styled from 'styled-components';
@@ -8,7 +9,9 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <StyledBackground>test</StyledBackground>
+      <StyledBackground>
+        <Nav />
+      </StyledBackground>
     </div>
   );
 }
@@ -16,7 +19,8 @@ function App() {
 const StyledBackground = styled.div`
   background: var(--bg-color);
   height: 100%;
-  color: var(--heading-color);
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
 `;
 
 export default App;
