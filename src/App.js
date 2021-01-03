@@ -9,18 +9,11 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <StyledBackground>
-        <Nav />
-      </StyledBackground>
+      <Nav />
     </div>
   );
 }
 
-const StyledBackground = styled.div`
-  background: var(--bg-color);
-  height: 100%;
-  color: var(--text-color);
-  font-family: 'Roboto', sans-serif;
-`;
+const StyledBackground = styled.div``;
 
 export default App;

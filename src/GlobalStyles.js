@@ -2,7 +2,16 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     html {
+        width: 100%;
+    }
+    body {
         height: 100%;
+        min-height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        background: var(--bg-color);
+        color: var(--text-color);
+        font-family: 'Roboto', sans-serif;
     }
     * {
         padding: 0;
@@ -15,7 +24,8 @@ const GlobalStyle = createGlobalStyle`
         --heading-color: #D1DDE4;
     }
     .App {
-        height: 100vh;
+        width: 100%;
     }
+ 
 `;
 export default GlobalStyle;
