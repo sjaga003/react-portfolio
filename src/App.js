@@ -28,7 +28,6 @@ const Main = styled.div`
   padding: 0px 20vw 0px 20vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 export default App;

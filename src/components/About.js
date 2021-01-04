@@ -45,6 +45,7 @@ const SubHeading = styled.div`
   font-size: var(--fs-md);
   font-weight: 400;
   line-height: 28px;
+  max-width: 700px;
 `;
 
 const EmailButton = styled.button`

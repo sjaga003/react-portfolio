@@ -111,7 +111,7 @@ const SkillsHeading = styled.h1`
 
 const SkillsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, 120px);
+  grid-template-columns: repeat(auto-fit, 130px);
   grid-column-gap: 64px;
   grid-row-gap: 32px;
   justify-content: center;
