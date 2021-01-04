@@ -36,6 +36,7 @@ const Logo = styled.div`
   font-family: 'Staatliches', cursive;
   font-weight: 400;
   font-size: 48px;
+  text-decoration: underline;
 `;
 
 const Navigation = styled.nav`
@@ -55,7 +56,7 @@ const NavHeadings = styled.ul`
 
 const NavHeading = styled.li`
   padding-left: 20px;
-  font-size: 16px;
+  font-size: 15px;
   display: flex;
   align-items: center;
 `;
