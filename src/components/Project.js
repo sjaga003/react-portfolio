@@ -4,31 +4,27 @@ import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import styled from 'styled-components';
 
-const Project = ({ index, list }) => {
-  const currentProject = list[index];
+const Project = ({ index, project }) => {
   return (
     <ProjectContainer>
       {/* If index is even image on left side, if index is odd image on right side */}
       {!(index % 2) ? (
-        <ProjectImage src={currentProject.image} alt={`Project ${index}`} />
+        <ProjectImage src={project.image} alt={`Project ${index}`} />
       ) : (
         ''
       )}
 
       <ProjectInfo>
-        <ProjectTitle>{currentProject.title}</ProjectTitle>
-        <ProjectDescription>{currentProject.description}</ProjectDescription>
-        <ProjectTechnology>{currentProject.technology}</ProjectTechnology>
+        <ProjectTitle>{project.title}</ProjectTitle>
+        <ProjectDescription>{project.description}</ProjectDescription>
+        <ProjectTechnology>{project.technology}</ProjectTechnology>
         <ProjectIcons>
           <ProjectIcon icon={faGithub} />
           <ProjectIcon icon={faExternalLinkAlt} />
         </ProjectIcons>
       </ProjectInfo>
       {index % 2 ? (
-        <ProjectImageRight
-          src={currentProject.image}
-          alt={`Project ${index}`}
-        />
+        <ProjectImageRight src={project.image} alt={`Project ${index}`} />
       ) : (
         ''
       )}

@@ -39,7 +39,7 @@ const Projects = () => {
       <ProjectsHeading>Some of My Work</ProjectsHeading>
       <ProjectsContainer>
         {list.map((project, index) => {
-          return <Project key={index} index={index} list={list} />;
+          return <Project key={index} index={index} project={list[index]} />;
         })}
       </ProjectsContainer>
       <SeeMoreButton>See More</SeeMoreButton>
@@ -51,7 +51,6 @@ const ProjectsSection = styled.section`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 0px 0px 210px 0px;
 `;
 
@@ -74,7 +73,7 @@ const ProjectsHeading = styled.h1`
     position: relative;
     height: 2px;
     width: 500px;
-    margin-left: 30px;
+    margin-left: 15px;
     background: var(--heading-color);
   }
 `;
@@ -89,6 +88,7 @@ const SeeMoreButton = styled.button`
   padding: 16px 32px;
   font-size: 16px;
   font-weight: 500;
+  align-self: center;
 `;
 
 export default Projects;
