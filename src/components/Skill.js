@@ -24,28 +24,28 @@ const SkillBox = styled.div`
   align-items: center;
   background: var(--secondary-color);
   border-radius: 8px;
-  height: 175px;
-  width: 155px;
+  box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.7);
 `;
 
 const ImageBox = styled.img`
-  width: 90px;
+  width: var(--fs-skill-icons);
   user-select: none;
 `;
 
 const Logo = styled.div`
   display: flex;
-  font-size: 90px;
+  font-size: var(--fs-skill-icons);
   user-select: none;
   height: 100%;
   align-items: center;
+  padding: 10px 0px 0px 0px;
 `;
 
 const SkillName = styled.div`
   font-family: 'Fira Code', monospace;
-  font-size: 18px;
+  font-size: var(--fs-xs);
   font-weight: bold;
-  padding: 0px 0px 10px 0px;
+  padding: 10px 0px 10px 0px;
 `;
 
 export default Skill;

@@ -51,7 +51,7 @@ const ProjectsSection = styled.section`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 0px 0px 210px 0px;
+  padding: 0px 0px 100px 0px;
 `;
 
 const ProjectsContainer = styled.div`
@@ -61,7 +61,7 @@ const ProjectsContainer = styled.div`
 `;
 
 const ProjectsHeading = styled.h1`
-  font-size: 40px;
+  font-size: var(--fs-heading);
   color: var(--heading-color);
   display: flex;
   flex-direction: row;
@@ -86,7 +86,7 @@ const SeeMoreButton = styled.button`
   color: var(--highlight-color);
   background: none;
   padding: 16px 32px;
-  font-size: 16px;
+  font-size: var(--fs-sm);
   font-weight: 500;
   align-self: center;
 `;

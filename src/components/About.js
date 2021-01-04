@@ -28,7 +28,7 @@ const AboutSection = styled.section`
 const Hello = styled.div`
   color: var(--highlight-color);
   font-family: 'Fira Code', monospace;
-  font-size: 24px;
+  font-size: var(--fs-md);
   padding-bottom: 24px;
 `;
 
@@ -36,13 +36,13 @@ const Name = styled.div`
   color: var(--heading-color);
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 64px;
+  font-size: var(--fs-title);
   padding-bottom: 24px;
 `;
 
 const SubHeading = styled.div`
   padding-bottom: 24px;
-  font-size: 20px;
+  font-size: var(--fs-md);
   font-weight: 400;
   line-height: 28px;
 `;
@@ -55,7 +55,7 @@ const EmailButton = styled.button`
   color: var(--highlight-color);
   background: none;
   padding: 16px 32px;
-  font-size: 16px;
+  font-size: var(--fs-small);
   font-weight: 500;
 `;
 

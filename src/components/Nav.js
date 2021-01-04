@@ -35,7 +35,7 @@ const Nav = () => {
 const Logo = styled.div`
   font-family: 'Staatliches', cursive;
   font-weight: 400;
-  font-size: 48px;
+  font-size: var(--fs-heading);
   text-decoration: underline;
 `;
 
@@ -56,7 +56,7 @@ const NavHeadings = styled.ul`
 
 const NavHeading = styled.li`
   padding-left: 20px;
-  font-size: 15px;
+  font-size: var(--fs-sm);
   display: flex;
   align-items: center;
 `;

@@ -60,12 +60,12 @@ const ProjectInfo = styled.div`
 
 const ProjectTitle = styled.h2`
   color: var(--heading-color);
-  font-size: 32px;
+  font-size: var(--fs-xl);
   padding-bottom: 8px;
 `;
 
 const ProjectDescription = styled.div`
-  font-size: 16px;
+  font-size: var(--fs-sm);
   padding-bottom: 8px;
   line-height: 22px;
 `;
@@ -73,7 +73,7 @@ const ProjectDescription = styled.div`
 const ProjectTechnology = styled.div`
   font-family: 'Fira Code', monospace;
   padding-bottom: 8px;
-  font-size: 14px;
+  font-size: var(--fs-xs);
   color: var(--highlight-color);
 `;
 
@@ -81,7 +81,7 @@ const ProjectIcons = styled.div``;
 
 const ProjectIcon = styled(FontAwesomeIcon)`
   margin-right: 12px;
-  font-size: 18px;
+  font-size: var(--fs-md);
 `;
 
 export default Project;

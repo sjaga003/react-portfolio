@@ -92,7 +92,7 @@ const SkillsSection = styled.section`
 `;
 
 const SkillsHeading = styled.h1`
-  font-size: 40px;
+  font-size: var(--fs-heading);
   color: var(--heading-color);
   display: flex;
   flex-direction: row;
@@ -111,7 +111,7 @@ const SkillsHeading = styled.h1`
 
 const SkillsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, 155px);
+  grid-template-columns: repeat(auto-fit, 120px);
   grid-column-gap: 64px;
   grid-row-gap: 32px;
   justify-content: center;
