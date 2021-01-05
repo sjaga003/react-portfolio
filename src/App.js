@@ -8,6 +8,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
+import { motion, useAnimation } from 'framer-motion';
 
 function App() {
   return (
