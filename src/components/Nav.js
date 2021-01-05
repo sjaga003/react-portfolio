@@ -44,18 +44,10 @@ const navFadeIn = {
 const logoFadeIn = {
   hidden: {
     opacity: 0,
-    transition: {
-      type: 'tween',
-      ease: 'easeInOut',
-      duration: 0.5,
-    },
   },
   show: {
     opacity: 1,
     scale: 1,
-  },
-  hover: {
-    scale: 1.2,
   },
 };
 
@@ -77,7 +69,7 @@ const Nav = () => {
     <Navigation>
       <Logo
         variants={logoFadeIn}
-        whileHover="hover"
+        whileHover={{ scale: 1.2 }}
         initial="hidden"
         animate="show"
       >
@@ -121,18 +113,18 @@ const Nav = () => {
             />
           </svg>
         </NavHeading>
-        <NavHeading
+        <NavHeadingIcon
           whileHover={{ color: 'var(--highlight-color)' }}
           variants={navFadeIn}
         >
           <FontAwesomeIcon icon={faGithub} />
-        </NavHeading>
-        <NavHeading
+        </NavHeadingIcon>
+        <NavHeadingIcon
           whileHover={{ color: 'var(--highlight-color)' }}
           variants={navFadeIn}
         >
           <FontAwesomeIcon icon={faLinkedin} />
-        </NavHeading>
+        </NavHeadingIcon>
       </NavHeadings>
     </Navigation>
   );
@@ -152,7 +144,11 @@ const Navigation = styled(motion.nav)`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 80px 0px 80px;
+  padding: 24px 80px 24px 80px;
+  /* position: sticky;
+  top: 0;
+  background: var(--bg-color);
+  box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.7); */
 `;
 
 const NavHeadings = styled(motion.ul)`
@@ -172,16 +168,8 @@ const NavHeading = styled(motion.li)`
   }
 `;
 
-const NavHeadingLast = styled(NavHeading)`
-  &::after {
-    content: '';
-    display: block;
-    position: relative;
-    height: 2px;
-    width: 80px;
-    margin-left: 20px;
-    background: var(--text-color);
-  }
+const NavHeadingIcon = styled(NavHeading)`
+  font-size: var(--fs-md);
 `;
 
 const NavText = styled.span`

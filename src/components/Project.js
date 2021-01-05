@@ -9,7 +9,11 @@ const Project = ({ index, project }) => {
     <ProjectContainer>
       {/* If index is even image on left side, if index is odd image on right side */}
       {!(index % 2) ? (
-        <ProjectImage src={project.image} alt={`Project ${index}`} />
+        <ProjectImage
+          draggable={false}
+          src={project.image}
+          alt={`Project ${index}`}
+        />
       ) : (
         ''
       )}
@@ -24,7 +28,11 @@ const Project = ({ index, project }) => {
         </ProjectIcons>
       </ProjectInfo>
       {index % 2 ? (
-        <ProjectImageRight src={project.image} alt={`Project ${index}`} />
+        <ProjectImageRight
+          draggable={false}
+          src={project.image}
+          alt={`Project ${index}`}
+        />
       ) : (
         ''
       )}
@@ -45,6 +53,7 @@ const ProjectImage = styled.img`
   width: 400px;
   height: 306px;
   margin-right: 100px;
+  user-select: none;
 `;
 
 const ProjectImageRight = styled(ProjectImage)`
