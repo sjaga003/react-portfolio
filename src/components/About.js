@@ -33,6 +33,36 @@ const aboutFadeIn = {
   },
 };
 
+const emailButtonHover = {
+  show: {
+    background: 'rgba(62,160,230, 0)',
+  },
+  hover: {
+    background: 'rgba(62,160,230, 0.15)',
+    transition: {
+      type: 'tween',
+      ease: 'easeInOut',
+      duration: 0.3,
+    },
+  },
+};
+
+const resumeButtonHover = {
+  show: {
+    background: 'rgba(62,160,230, 1)',
+    color: 'var(--bg-color)',
+  },
+  hover: {
+    background: 'rgba(62,160,230, 0.15)',
+    color: 'var(--highlight-color)',
+    transition: {
+      type: 'tween',
+      ease: 'easeInOut',
+      duration: 0.3,
+    },
+  },
+};
+
 const About = () => {
   return (
     <AboutSection variants={containerFadeIn} initial="hidden" animate="show">
@@ -45,8 +75,20 @@ const About = () => {
         ratione illum provident beatae nemo, soluta architecto dolores.
       </SubHeading>
       <motion.div variants={aboutFadeIn}>
-        <EmailButton>Contact Me</EmailButton>
-        <ResumeButton>View Resume</ResumeButton>
+        <ResumeButton
+          initial="show"
+          whileHover="hover"
+          variants={resumeButtonHover}
+        >
+          View Resume
+        </ResumeButton>
+        <EmailButton
+          initial="show"
+          whileHover="hover"
+          variants={emailButtonHover}
+        >
+          Contact Me
+        </EmailButton>
       </motion.div>
     </AboutSection>
   );
@@ -81,7 +123,7 @@ const SubHeading = styled(motion.div)`
 `;
 
 const EmailButton = styled(motion.button)`
-  margin-right: 48px;
+  margin-right: 24px;
   border: 1px solid #3ea0e6;
   border-radius: 8px;
   font-family: 'Fira Code', monospace;
@@ -90,6 +132,9 @@ const EmailButton = styled(motion.button)`
   padding: 1rem 1.75rem;
   font-size: var(--fs-small);
   font-weight: 500;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const ResumeButton = styled(EmailButton)`
