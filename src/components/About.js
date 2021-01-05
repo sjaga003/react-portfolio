@@ -87,7 +87,7 @@ const EmailButton = styled(motion.button)`
   font-family: 'Fira Code', monospace;
   color: var(--highlight-color);
   background: none;
-  padding: 16px 32px;
+  padding: 1rem 1.75rem;
   font-size: var(--fs-small);
   font-weight: 500;
 `;
