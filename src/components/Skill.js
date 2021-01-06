@@ -1,9 +1,15 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 
-const Skill = ({ skill }) => {
+const skillFadeIn = {
+  show: {},
+  hidden: {},
+};
+
+const Skill = ({ skill, cardVariant }) => {
   return (
-    <SkillBox>
+    <SkillBox variants={cardVariant}>
       {skill.external ? (
         <Logo>
           <ImageBox draggable={false} src={skill.logo} alt={skill.name} />
@@ -17,7 +23,7 @@ const Skill = ({ skill }) => {
   );
 };
 
-const SkillBox = styled.div`
+const SkillBox = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

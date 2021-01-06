@@ -112,8 +112,8 @@ const Projects = () => {
           <motion.path
             variants={fillLine}
             d="M0.75 1H519.75"
-            stroke="#D1DDE4"
-            stroke-width="2"
+            stroke="var(--heading-color)"
+            strokeWidth="2"
           />
         </BreakLine>
       </ProjectsHeading>
