@@ -302,6 +302,10 @@ const ProjectTitle = styled.h2`
   color: var(--heading-color);
   font-size: var(--fs-xl);
   padding-bottom: 8px;
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-xl) * 1.2);
+  }
 `;
 
 const ProjectDescription = styled.div`
@@ -327,6 +331,11 @@ const ProjectDescription = styled.div`
   // Large devices (desktops, less than 1200px)
   @media (max-width: 1199.98px) {
   }
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-sm) * 1.2);
+    line-height: unset;
+  }
 `;
 
 const ProjectTechnology = styled.div`
@@ -334,6 +343,10 @@ const ProjectTechnology = styled.div`
   padding-bottom: 8px;
   font-size: var(--fs-xs);
   color: var(--highlight-color);
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-xs) * 1.2);
+  }
 `;
 
 const ProjectIcons = styled.div``;
@@ -348,6 +361,10 @@ const IconContainer = styled(motion.div)`
 const ProjectIcon = styled(FontAwesomeIcon)`
   margin-right: 12px;
   font-size: var(--fs-md);
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-md) * 1.2);
+  }
 `;
 
 export default Project;

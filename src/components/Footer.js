@@ -20,7 +20,11 @@ const FooterContainer = styled.footer`
 const CenterText = styled.div`
   font-family: 'Fira Code', monospace;
   color: var(--text-color);
-  font-size: 14px;
+  font-size: var(--fs-xs);
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-xs) * 1.2);
+  }
 `;
 
 export default Footer;

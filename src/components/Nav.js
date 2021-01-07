@@ -137,6 +137,10 @@ const Logo = styled(motion.div)`
   &:hover {
     cursor: pointer;
   }
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-heading) * 1.2);
+  }
 `;
 
 const Navigation = styled(motion.nav)`
@@ -196,10 +200,18 @@ const NavHeading = styled(motion.li)`
   &:hover:not(.breakLine) {
     cursor: pointer;
   }
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-sm) * 1.2);
+  }
 `;
 
 const NavHeadingIcon = styled(NavHeading)`
   font-size: var(--fs-md);
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-md) * 1.2);
+  }
 `;
 
 const NavText = styled.span`

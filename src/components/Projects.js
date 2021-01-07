@@ -163,6 +163,10 @@ const ProjectsContainer = styled(motion.div)`
   & > *:last-child {
     padding-bottom: 130px;
   }
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    justify-content: center;
+  }
 `;
 
 const ProjectsHeading = styled(motion.h1)`
@@ -197,6 +201,10 @@ const ProjectsHeading = styled(motion.h1)`
   // Large devices (desktops, less than 1200px)
   @media (max-width: 1199.98px) {
   }
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-heading) * 1.2);
+  }
 `;
 
 const SeeMoreButton = styled(motion.button)`
@@ -227,6 +235,10 @@ const SeeMoreButton = styled(motion.button)`
 
   // Large devices (desktops, less than 1200px)
   @media (max-width: 1199.98px) {
+  }
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-sm) * 1.2);
   }
 `;
 

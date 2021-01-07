@@ -108,6 +108,10 @@ const Hello = styled(motion.div)`
   font-family: 'Fira Code', monospace;
   font-size: var(--fs-md);
   padding-bottom: 24px;
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-md) * 1.2);
+  }
 `;
 
 const Name = styled(motion.div)`
@@ -131,6 +135,10 @@ const Name = styled(motion.div)`
   // Large devices (desktops, less than 1200px)
   @media (max-width: 1199.98px) {
   }
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-title) * 1.2);
+  }
 `;
 
 const SubHeading = styled(motion.div)`
@@ -139,6 +147,10 @@ const SubHeading = styled(motion.div)`
   font-weight: 400;
   line-height: 28px;
   max-width: 700px;
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-md) * 1.2);
+  }
 `;
 
 const EmailButton = styled(motion.button)`
@@ -149,7 +161,7 @@ const EmailButton = styled(motion.button)`
   color: var(--highlight-color);
   background: none;
   padding: 1rem 1.75rem;
-  font-size: var(--fs-small);
+  font-size: var(--fs-sm);
   font-weight: 500;
   &:hover {
     cursor: pointer;
@@ -169,6 +181,10 @@ const EmailButton = styled(motion.button)`
 
   // Large devices (desktops, less than 1200px)
   @media (max-width: 1199.98px) {
+  }
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-sm) * 1.2);
   }
 `;
 

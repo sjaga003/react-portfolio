@@ -232,6 +232,10 @@ const SkillsHeading = styled(motion.h1)`
   // Large devices (desktops, less than 1200px)
   @media (max-width: 1199.98px) {
   }
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-heading) * 1.2);
+  }
 `;
 
 const SkillsContainer = styled(motion.div)`
@@ -257,6 +261,11 @@ const SkillsContainer = styled(motion.div)`
 
   // Large devices (desktops, less than 1200px)
   @media (max-width: 1199.98px) {
+  }
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, calc(150px * 1.2));
   }
 `;
 

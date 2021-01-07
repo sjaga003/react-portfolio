@@ -52,6 +52,10 @@ const SkillName = styled.div`
   font-size: var(--fs-xs);
   font-weight: bold;
   padding: 10px 0px 10px 0px;
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    font-size: calc(var(--fs-xs) * 1.2);
+  }
 `;
 
 export default Skill;
