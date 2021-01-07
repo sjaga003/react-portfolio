@@ -70,7 +70,7 @@ const containerHover = {
   hover: {},
 };
 
-const Project = ({ index, project }) => {
+const Project = ({ index, project, isMobile }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.25 });
 
@@ -90,7 +90,10 @@ const Project = ({ index, project }) => {
       {/* If index is even image on left side, if index is odd image on right side */}
       {!(index % 2) ? (
         <>
-          <ImageContainer variants={containerHover} whileHover="hover">
+          <ImageContainer
+            variants={containerHover}
+            whileHover={isMobile ? '' : 'hover'}
+          >
             <ImageBackground></ImageBackground>
 
             <ProjectImage
@@ -154,29 +157,94 @@ const ProjectContainer = styled(motion.div)`
   display: flex;
   align-items: center;
   padding-bottom: 200px;
+  @media (max-width: 575.98px) {
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 const ProjectImage = styled(motion.img)`
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 14.5408px;
   object-fit: cover;
-  width: 400px;
-  height: 306px;
-
+  width: inherit;
+  height: inherit;
   user-select: none;
+  @media (max-width: 575.98px) {
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    filter: contrast(1) brightness(30%);
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 const ImageBackground = styled.div`
   border: var(--highlight-color) 2px solid;
   width: 390px;
-  height: 300px;
+  height: 290px;
   border-radius: 14.5408px;
   margin-top: 5px;
   position: absolute;
+  @media (max-width: 575.98px) {
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    display: none;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 const ImageContainer = styled(motion.div)`
   display: flexbox;
+  width: 390px;
+  height: 300px;
+  @media (max-width: 575.98px) {
+    width: 80vw;
+    height: 60vh;
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    width: 80vw;
+    height: 55vh;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
   &:hover {
     cursor: pointer;
   }
@@ -187,11 +255,47 @@ const ProjectInfo = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-left: 80px;
+  z-index: 2;
+  @media (max-width: 575.98px) {
+    height: 50vh !important;
+    width: 70vw !important;
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    position: absolute;
+    margin-left: 0px;
+    height: 40vh;
+    width: 60vw;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 const ProjectInfo2 = styled(ProjectInfo)`
   margin-right: 80px;
   margin-left: 0px;
+  @media (max-width: 575.98px) {
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    margin-right: 0px;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 const ProjectTitle = styled.h2`
@@ -205,6 +309,24 @@ const ProjectDescription = styled.div`
   padding-bottom: 8px;
   line-height: 22px;
   width: 450px;
+  @media (max-width: 575.98px) {
+    width: inherit;
+    height: inherit;
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    width: inherit;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+    width: inherit;
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 const ProjectTechnology = styled.div`

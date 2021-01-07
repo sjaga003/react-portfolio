@@ -149,6 +149,21 @@ const Navigation = styled(motion.nav)`
   top: 0;
   background: var(--bg-color);
   box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.7); */
+  @media (max-width: 575.98px) {
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    padding: 24px 24px 24px 24px;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 const NavHeadings = styled(motion.ul)`
@@ -156,6 +171,21 @@ const NavHeadings = styled(motion.ul)`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  @media (max-width: 575.98px) {
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    display: none;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 const NavHeading = styled(motion.li)`

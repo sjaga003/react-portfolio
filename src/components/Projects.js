@@ -83,7 +83,7 @@ const list = [
   },
 ];
 
-const Projects = () => {
+const Projects = ({ isMobile }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
 
@@ -119,7 +119,14 @@ const Projects = () => {
       </ProjectsHeading>
       <ProjectsContainer>
         {list.map((project, index) => {
-          return <Project key={index} index={index} project={list[index]} />;
+          return (
+            <Project
+              isMobile={isMobile}
+              key={index}
+              index={index}
+              project={list[index]}
+            />
+          );
         })}
       </ProjectsContainer>
       <SeeMoreButton variants={buttonHover} initial="show" whileHover="hover">
@@ -134,6 +141,22 @@ const ProjectsSection = styled(motion.section)`
   display: flex;
   flex-direction: column;
   padding: 0px 0px 100px 0px;
+  @media (max-width: 575.98px) {
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    width: 100%;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+    width: 100%;
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 const ProjectsContainer = styled(motion.div)`
@@ -158,6 +181,22 @@ const ProjectsHeading = styled(motion.h1)`
     margin-left: 15px;
     background: var(--heading-color);
   } */
+  @media (max-width: 575.98px) {
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    justify-content: center;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+    justify-content: center;
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 const SeeMoreButton = styled(motion.button)`
@@ -174,10 +213,41 @@ const SeeMoreButton = styled(motion.button)`
   &:hover {
     cursor: pointer;
   }
+  @media (max-width: 575.98px) {
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    margin-right: 0;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 const BreakLine = styled.svg`
   margin-left: 24px;
+  @media (max-width: 575.98px) {
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    display: none;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+    display: none;
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 export default Projects;

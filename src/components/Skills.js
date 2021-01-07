@@ -190,6 +190,22 @@ const SkillsSection = styled.section`
   display: flex;
   flex-direction: column;
   padding: 210px 0px 210px 0px;
+  @media (max-width: 575.98px) {
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    width: 100%;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+    width: 100%;
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 const SkillsHeading = styled(motion.h1)`
@@ -199,6 +215,23 @@ const SkillsHeading = styled(motion.h1)`
   flex-direction: row;
   align-items: center;
   padding-bottom: 80px;
+  @media (max-width: 575.98px) {
+    text-align: center;
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    justify-content: center;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+    justify-content: center;
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 const SkillsContainer = styled(motion.div)`
@@ -207,10 +240,44 @@ const SkillsContainer = styled(motion.div)`
   grid-column-gap: 64px;
   grid-row-gap: 32px;
   justify-content: left;
+  @media (max-width: 575.98px) {
+    grid-column-gap: 32px;
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    justify-content: center;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+    justify-content: center;
+    width: 100%;
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 const BreakLine = styled.svg`
   margin-left: 24px;
+  @media (max-width: 575.98px) {
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    display: none;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+    display: none;
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 export default Skills;

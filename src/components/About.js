@@ -95,8 +95,12 @@ const About = () => {
 };
 
 const AboutSection = styled(motion.div)`
-  padding: 210px 0px 210px 0px;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 100px 0px 300px 0px;
 `;
 
 const Hello = styled(motion.div)`
@@ -112,6 +116,21 @@ const Name = styled(motion.div)`
   font-weight: 700;
   font-size: var(--fs-title);
   padding-bottom: 24px;
+  @media (max-width: 575.98px) {
+    font-size: var(--fs-title-m);
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
+  }
 `;
 
 const SubHeading = styled(motion.div)`
@@ -134,6 +153,22 @@ const EmailButton = styled(motion.button)`
   font-weight: 500;
   &:hover {
     cursor: pointer;
+  }
+  @media (max-width: 575.98px) {
+    padding: 1rem 1rem;
+    font-size: var(--fs-xs);
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+  }
+
+  // Large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {
   }
 `;
 
