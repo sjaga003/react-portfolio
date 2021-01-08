@@ -5,11 +5,9 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
         box-sizing: border-box;
         position:relative;
-  overflow-x:hidden;
+        height: 100%;
     }
     body {
-        height: 100%;
-        min-height: 100%;
         width: 100%;
         background: var(--bg-color);
         color: var(--text-color);
@@ -38,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
     }
     .App {
         width: 100%;
+        height: 100%;
     }
     
     @media (max-width: 575.98px) { }

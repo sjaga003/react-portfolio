@@ -14,6 +14,13 @@ const containerFadeIn = {
   hidden: { opacity: 0 },
 };
 
+const containerFadeInMobile = {
+  show: {
+    opacity: 1,
+  },
+  hidden: { opacity: 0 },
+};
+
 const aboutFadeIn = {
   show: {
     opacity: [0.1, 1],
@@ -63,9 +70,13 @@ const resumeButtonHover = {
   },
 };
 
-const About = () => {
+const About = ({ isMobile }) => {
   return (
-    <AboutSection variants={containerFadeIn} initial="hidden" animate="show">
+    <AboutSection
+      variants={isMobile ? containerFadeInMobile : containerFadeIn}
+      initial="hidden"
+      animate="show"
+    >
       <Hello variants={aboutFadeIn}>Hello, my name is</Hello>
       <Name variants={aboutFadeIn}>Suhas Jagannath</Name>
       <SubHeading variants={aboutFadeIn}>

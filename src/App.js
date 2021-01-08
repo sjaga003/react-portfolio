@@ -17,10 +17,11 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <Nav />
-      <Content>
+      <Nav isMobile={isMobile} />
+
+      <Content id="content">
         <Main>
-          <About />
+          <About isMobile={isMobile} />
           <Projects isMobile={isMobile} />
           <Skills />
         </Main>

@@ -235,7 +235,7 @@ const ImageContainer = styled(motion.div)`
   // Small devices (landscape phones, less than 768px)
   @media (max-width: 767.98px) {
     width: 80vw;
-    height: 55vh;
+    height: 75vh;
   }
 
   // Medium devices (tablets, less than 992px)
@@ -257,7 +257,7 @@ const ProjectInfo = styled.div`
   margin-left: 80px;
   z-index: 2;
   @media (max-width: 575.98px) {
-    height: 50vh !important;
+    height: 60vh !important;
     width: 70vw !important;
   }
 

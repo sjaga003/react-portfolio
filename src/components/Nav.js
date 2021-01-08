@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLaptopCode, faGem } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
+import MobileNav from '../components/MobileNav';
 
 const containerFadeIn = {
   show: {
@@ -63,72 +64,103 @@ const fillLine = {
     },
   },
 };
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+  var currentScrollPos = window.pageYOffset;
+  if (currentScrollPos < 18) {
+    document.getElementById('navbar').style.boxShadow =
+      '0px 10px 30px -15px rgba(0, 0, 0, 0)';
+  } else {
+    document.getElementById('navbar').style.boxShadow =
+      '0px 10px 30px -15px rgba(0, 0, 0, 0.7)';
+  }
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById('navbar').style.top = '0';
+  } else {
+    document.getElementById('navbar').style.top = '-500px';
+  }
+  prevScrollpos = currentScrollPos;
+};
 
-const Nav = () => {
+const Nav = ({ isMobile }) => {
   return (
-    <Navigation>
-      <Logo
-        variants={logoFadeIn}
-        whileHover={{ scale: 1.2 }}
-        initial="hidden"
-        animate="show"
-      >
-        SJ
-      </Logo>
-      <NavHeadings variants={containerFadeIn} initial="hidden" animate="show">
-        <NavHeading
-          whileHover={{ color: 'var(--highlight-color)' }}
-          variants={navFadeIn}
+    <Transition>
+      <Navigation id="navbar">
+        <Logo
+          variants={logoFadeIn}
+          whileHover={{ scale: 1.2 }}
+          initial="hidden"
+          animate="show"
         >
-          <FontAwesomeIcon icon={faUser} />
-          <NavText>About</NavText>
-        </NavHeading>
-        <NavHeading
-          whileHover={{ color: 'var(--highlight-color)' }}
-          variants={navFadeIn}
-        >
-          <FontAwesomeIcon icon={faLaptopCode} />
-          <NavText>Projects</NavText>
-        </NavHeading>
-        <NavHeading
-          whileHover={{ color: 'var(--highlight-color)' }}
-          variants={navFadeIn}
-        >
-          <FontAwesomeIcon icon={faGem} />
-          <NavText>Skills</NavText>
-        </NavHeading>
-        <NavHeading className="breakLine">
-          <svg
-            width="90"
-            height="3"
-            viewBox="0 0 90 3"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+          SJ
+        </Logo>
+        {isMobile ? (
+          <MobileNav />
+        ) : (
+          <NavHeadings
+            variants={containerFadeIn}
+            initial="hidden"
+            animate="show"
           >
-            <motion.path
-              variants={fillLine}
-              d="M0.238281 1.44046H89.3949"
-              stroke="#BCBCBC"
-              stroke-width="2.07341"
-            />
-          </svg>
-        </NavHeading>
-        <NavHeadingIcon
-          whileHover={{ color: 'var(--highlight-color)' }}
-          variants={navFadeIn}
-        >
-          <FontAwesomeIcon icon={faGithub} />
-        </NavHeadingIcon>
-        <NavHeadingIcon
-          whileHover={{ color: 'var(--highlight-color)' }}
-          variants={navFadeIn}
-        >
-          <FontAwesomeIcon icon={faLinkedin} />
-        </NavHeadingIcon>
-      </NavHeadings>
-    </Navigation>
+            <NavHeading
+              whileHover={{ color: 'var(--highlight-color)' }}
+              variants={navFadeIn}
+            >
+              <FontAwesomeIcon icon={faUser} />
+              <NavText>About</NavText>
+            </NavHeading>
+            <NavHeading
+              whileHover={{ color: 'var(--highlight-color)' }}
+              variants={navFadeIn}
+            >
+              <FontAwesomeIcon icon={faLaptopCode} />
+              <NavText>Projects</NavText>
+            </NavHeading>
+            <NavHeading
+              whileHover={{ color: 'var(--highlight-color)' }}
+              variants={navFadeIn}
+            >
+              <FontAwesomeIcon icon={faGem} />
+              <NavText>Skills</NavText>
+            </NavHeading>
+            <NavHeading className="breakLine">
+              <svg
+                width="90"
+                height="3"
+                viewBox="0 0 90 3"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <motion.path
+                  variants={fillLine}
+                  d="M0.238281 1.44046H89.3949"
+                  stroke="#BCBCBC"
+                  stroke-width="2.07341"
+                />
+              </svg>
+            </NavHeading>
+            <NavHeadingIcon
+              whileHover={{ color: 'var(--highlight-color)' }}
+              variants={navFadeIn}
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </NavHeadingIcon>
+            <NavHeadingIcon
+              whileHover={{ color: 'var(--highlight-color)' }}
+              variants={navFadeIn}
+            ></NavHeadingIcon>
+          </NavHeadings>
+        )}
+      </Navigation>
+    </Transition>
   );
 };
+
+const Transition = styled.div`
+  #navbar {
+    transition: all 0.5s;
+  }
+`;
 
 const Logo = styled(motion.div)`
   font-family: 'Staatliches', cursive;
@@ -148,17 +180,22 @@ const Navigation = styled(motion.nav)`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 80px 24px 80px;
+  padding: 12px 80px;
+  background: rgba(23, 28, 40, 1);
+  position: fixed;
+  width: 100%;
+  z-index: 30;
+
   /* position: sticky;
   top: 0;
   background: var(--bg-color);
-  box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.7); */
+   */
   @media (max-width: 575.98px) {
   }
 
   // Small devices (landscape phones, less than 768px)
   @media (max-width: 767.98px) {
-    padding: 24px 24px 24px 24px;
+    padding: 10px 20px;
   }
 
   // Medium devices (tablets, less than 992px)
