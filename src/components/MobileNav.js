@@ -6,11 +6,13 @@ import {
   faLaptopCode,
   faTimes,
   faUser,
+  faFileAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Link, animateScroll } from 'react-scroll';
+import Resume from '../files/Suhas_Jagannath_Resume.pdf';
 
 const burgerVariant = {
   intitial: {
@@ -171,6 +173,16 @@ const MobileNav = ({ navOpen, setNavOpen }) => {
                   >
                     <FontAwesomeIcon icon={faLinkedin} />
                   </Icon>
+                  <Icon
+                    href={Resume}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variants={hoverVariant}
+                    initial={'show'}
+                    whileHover={'hover'}
+                  >
+                    <FontAwesomeIcon icon={faFileAlt} />
+                  </Icon>
                 </IconItem>
               </List>
             </MobileMenu>
@@ -204,8 +216,9 @@ const IconContainer = styled.div`
 
 const Icon = styled(motion.a)`
   cursor: pointer;
-  height: 30px;
-  width: 30px;
+  height: fit-content;
+  width: fit-content;
+  margin-right: 20px;
   color: inherit;
   font-size: var(--fs-md);
 `;
@@ -237,9 +250,12 @@ const List = styled.ul`
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  width: 30%;
+
+  width: 50%;
+  justify-content: left;
+  align-items: flex-start;
   @media (max-width: 575.98px) {
-    width: 60%;
+    width: 80%;
   }
 `;
 
@@ -258,6 +274,7 @@ const IconItem = styled(ListItem)`
   display: flex;
   justify-content: space-evenly;
   margin-top: 20px;
+  align-self: center;
   cursor: unset;
 `;
 

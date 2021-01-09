@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faLaptopCode, faGem } from '@fortawesome/free-solid-svg-icons';
+import {
+  faUser,
+  faLaptopCode,
+  faGem,
+  faFileAlt,
+} from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
 import MobileNav from '../components/MobileNav';
 import { Link, animateScroll } from 'react-scroll';
+import Resume from '../files/Suhas_Jagannath_Resume.pdf';
 
 const containerFadeIn = {
   show: {
@@ -200,6 +206,14 @@ const Nav = ({ isMobile }) => {
                 variants={navFadeIn}
               >
                 <FontAwesomeIcon icon={faLinkedin} />
+              </NavHeadingIcon>
+            </ALink>
+            <ALink href={Resume} target="_blank" rel="noopener noreferrer">
+              <NavHeadingIcon
+                whileHover={{ color: 'var(--highlight-color)' }}
+                variants={navFadeIn}
+              >
+                <FontAwesomeIcon icon={faFileAlt} />
               </NavHeadingIcon>
             </ALink>
           </NavHeadings>

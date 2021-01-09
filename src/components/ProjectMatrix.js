@@ -238,8 +238,17 @@ const ProjectMatrix = ({ isModalOpen, setIsModalOpen, isMobile }) => {
   } catch {}
 
   return (
-    <Background id="ModalContainer">
+    <Background
+      id="ModalContainer"
+      onClick={(e) => {
+        if (e.target.id === 'cover') {
+          console.log(e.target);
+          setIsModalOpen(!isModalOpen);
+        }
+      }}
+    >
       <Cover
+        id="cover"
         inital="hidden"
         variants={blockVariant}
         animate={isModalOpen ? 'show' : 'hidden'}
