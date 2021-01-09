@@ -176,7 +176,7 @@ const ProjectContainer = styled(motion.div)`
 `;
 
 const ProjectImage = styled(motion.img)`
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 14.5408px;
   object-fit: cover;
   width: inherit;
@@ -206,6 +206,7 @@ const ImageBackground = styled.div`
   border-radius: 14.5408px;
   margin-top: 5px;
   position: absolute;
+  z-index: -1;
   @media (max-width: 575.98px) {
   }
 

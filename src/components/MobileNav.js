@@ -10,6 +10,7 @@ import {
 import styled from 'styled-components';
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { Link, animateScroll } from 'react-scroll';
 
 const burgerVariant = {
   intitial: {
@@ -44,8 +45,7 @@ const hoverVariant = {
   },
 };
 
-const MobileNav = () => {
-  const [navOpen, setNavOpen] = useState(false);
+const MobileNav = ({ navOpen, setNavOpen }) => {
   try {
     const element = document.getElementById('content');
     if (navOpen) {
@@ -74,61 +74,102 @@ const MobileNav = () => {
       </BurgerContainer>
       <AnimatePresence>
         {navOpen && (
-          <MobileMenu
-            variants={navVariant}
-            initial={'initial'}
-            animate={'click'}
-            exit={'initial'}
+          <MenuContainer
+            id="MenuContainer"
+            onClick={(e) => {
+              if (e.target.id === 'MenuContainer') {
+                setNavOpen(!navOpen);
+              }
+            }}
           >
-            <List>
-              <ListItem
-                variants={hoverVariant}
-                initial={'show'}
-                whileHover={'hover'}
-              >
-                <IconContainer>
-                  <FontAwesomeIcon icon={faUser} />
-                </IconContainer>
-                <NavText>About</NavText>
-              </ListItem>
-              <ListItem
-                variants={hoverVariant}
-                initial={'show'}
-                whileHover={'hover'}
-              >
-                <IconContainer>
-                  <FontAwesomeIcon icon={faLaptopCode} />
-                </IconContainer>
-                <NavText>Projects</NavText>
-              </ListItem>
-              <ListItem
-                variants={hoverVariant}
-                initial={'show'}
-                whileHover={'hover'}
-              >
-                <IconContainer>
-                  <FontAwesomeIcon icon={faGem} />
-                </IconContainer>
-                <NavText>Skills</NavText>
-              </ListItem>
-              <IconItem>
-                <Icon
-                  variants={hoverVariant}
-                  initial={'show'}
-                  whileHover={'hover'}
+            <MobileMenu
+              variants={navVariant}
+              initial={'initial'}
+              animate={'click'}
+              exit={'initial'}
+              id="MobileMenu"
+            >
+              <List>
+                <LinkBox
+                  to="AboutSection"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact={true}
+                  activeClass={'active'}
+                  offset={-64}
                 >
-                  <FontAwesomeIcon icon={faGithub} />
-                </Icon>
-                <Icon
-                  variants={hoverVariant}
-                  initial={'show'}
-                  whileHover={'hover'}
+                  <ListItem
+                    variants={hoverVariant}
+                    initial={'show'}
+                    whileHover={'hover'}
+                  >
+                    <IconContainer>
+                      <FontAwesomeIcon icon={faUser} />
+                    </IconContainer>
+                    <NavText>About</NavText>
+                  </ListItem>
+                </LinkBox>
+                <LinkBox
+                  to="ProjectsSection"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact={true}
+                  activeClass={'active'}
+                  offset={-64}
                 >
-                  <FontAwesomeIcon icon={faLinkedin} />
-                </Icon>
-              </IconItem>
-            </List>
-          </MobileMenu>
+                  <ListItem
+                    variants={hoverVariant}
+                    initial={'show'}
+                    whileHover={'hover'}
+                  >
+                    <IconContainer>
+                      <FontAwesomeIcon icon={faLaptopCode} />
+                    </IconContainer>
+                    <NavText>Projects</NavText>
+                  </ListItem>
+                </LinkBox>
+                <LinkBox
+                  to="SkillsSection"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact={true}
+                  activeClass={'active'}
+                  offset={-64}
+                >
+                  <ListItem
+                    variants={hoverVariant}
+                    initial={'show'}
+                    whileHover={'hover'}
+                  >
+                    <IconContainer>
+                      <FontAwesomeIcon icon={faGem} />
+                    </IconContainer>
+                    <NavText>Skills</NavText>
+                  </ListItem>
+                </LinkBox>
+                <IconItem>
+                  <Icon
+                    variants={hoverVariant}
+                    initial={'show'}
+                    whileHover={'hover'}
+                  >
+                    <FontAwesomeIcon icon={faGithub} />
+                  </Icon>
+
+                  <Icon
+                    variants={hoverVariant}
+                    initial={'show'}
+                    whileHover={'hover'}
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </Icon>
+                </IconItem>
+              </List>
+            </MobileMenu>
+          </MenuContainer>
         )}
       </AnimatePresence>
     </>
@@ -142,6 +183,9 @@ const BurgerIcon = styled(FontAwesomeIcon)`
 `;
 const ExitIcon = styled(FontAwesomeIcon)`
   font-size: 30px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
 `;
 
 const NavText = styled.span``;
@@ -155,6 +199,9 @@ const IconContainer = styled.div`
 
 const Icon = styled(motion.div)`
   cursor: pointer;
+  height: 30px;
+  width: 30px;
+  font-size: var(--fs-md);
 `;
 
 const BurgerContainer = styled(motion.div)`
@@ -162,6 +209,22 @@ const BurgerContainer = styled(motion.div)`
   padding: 10px;
   user-select: none;
   cursor: pointer;
+`;
+
+const LinkBox = styled(Link)`
+  height: 30px;
+
+  &.active li {
+    color: var(--highlight-color) !important;
+  }
+`;
+
+const MenuContainer = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
 `;
 
 const List = styled.ul`
@@ -175,10 +238,11 @@ const List = styled.ul`
 `;
 
 const ListItem = styled(motion.li)`
-  margin-bottom: 30px;
   display: flex;
   cursor: pointer;
   font-size: var(--fs-lg);
+  color: var(--text-color);
+
   @media (max-width: 575.98px) {
     font-size: var(--fs-sm);
   }
@@ -186,7 +250,8 @@ const ListItem = styled(motion.li)`
 
 const IconItem = styled(ListItem)`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  margin-top: 20px;
   cursor: unset;
 `;
 

@@ -5,6 +5,7 @@ import { faUser, faLaptopCode, faGem } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
 import MobileNav from '../components/MobileNav';
+import { Link, animateScroll } from 'react-scroll';
 
 const containerFadeIn = {
   show: {
@@ -64,25 +65,30 @@ const fillLine = {
     },
   },
 };
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function () {
-  var currentScrollPos = window.pageYOffset;
-  if (currentScrollPos < 18) {
-    document.getElementById('navbar').style.boxShadow =
-      '0px 10px 30px -15px rgba(0, 0, 0, 0)';
-  } else {
-    document.getElementById('navbar').style.boxShadow =
-      '0px 10px 30px -15px rgba(0, 0, 0, 0.7)';
-  }
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById('navbar').style.top = '0';
-  } else {
-    document.getElementById('navbar').style.top = '-500px';
-  }
-  prevScrollpos = currentScrollPos;
-};
 
 const Nav = ({ isMobile }) => {
+  const [navOpen, setNavOpen] = useState(false);
+
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function () {
+    if (!navOpen) {
+      var currentScrollPos = window.pageYOffset;
+      if (currentScrollPos < 18) {
+        document.getElementById('navbar').style.boxShadow =
+          '0px 10px 30px -15px rgba(0, 0, 0, 0)';
+      } else {
+        document.getElementById('navbar').style.boxShadow =
+          '0px 10px 30px -15px rgba(0, 0, 0, 0.7)';
+      }
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById('navbar').style.top = '0';
+      } else {
+        document.getElementById('navbar').style.top = '-500px';
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  };
+
   return (
     <Transition>
       <Navigation id="navbar">
@@ -91,39 +97,72 @@ const Nav = ({ isMobile }) => {
           whileHover={{ scale: 1.2 }}
           initial="hidden"
           animate="show"
+          onClick={() => {
+            animateScroll.scrollToTop();
+          }}
         >
           SJ
         </Logo>
         {isMobile ? (
-          <MobileNav />
+          <MobileNav navOpen={navOpen} setNavOpen={setNavOpen} />
         ) : (
           <NavHeadings
             variants={containerFadeIn}
             initial="hidden"
             animate="show"
           >
-            <NavHeading
-              whileHover={{ color: 'var(--highlight-color)' }}
-              variants={navFadeIn}
+            <LinkBox
+              to="AboutSection"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact={true}
+              activeClass={'active'}
+              offset={-64}
             >
-              <FontAwesomeIcon icon={faUser} />
-              <NavText>About</NavText>
-            </NavHeading>
-            <NavHeading
-              whileHover={{ color: 'var(--highlight-color)' }}
-              variants={navFadeIn}
+              <NavHeading
+                whileHover={{ color: 'var(--highlight-color)' }}
+                variants={navFadeIn}
+              >
+                <FontAwesomeIcon icon={faUser} />
+                <NavText>About</NavText>
+              </NavHeading>
+            </LinkBox>
+            <LinkBox
+              to="ProjectsSection"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact={true}
+              activeClass={'active'}
+              offset={-64}
             >
-              <FontAwesomeIcon icon={faLaptopCode} />
-              <NavText>Projects</NavText>
-            </NavHeading>
-            <NavHeading
-              whileHover={{ color: 'var(--highlight-color)' }}
-              variants={navFadeIn}
+              <NavHeading
+                whileHover={{ color: 'var(--highlight-color)' }}
+                variants={navFadeIn}
+              >
+                <FontAwesomeIcon icon={faLaptopCode} />
+                <NavText>Projects</NavText>
+              </NavHeading>
+            </LinkBox>
+            <LinkBox
+              to="SkillsSection"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact={true}
+              activeClass={'active'}
+              offset={-64}
             >
-              <FontAwesomeIcon icon={faGem} />
-              <NavText>Skills</NavText>
-            </NavHeading>
-            <NavHeading className="breakLine">
+              <NavHeading
+                whileHover={{ color: 'var(--highlight-color)' }}
+                variants={navFadeIn}
+              >
+                <FontAwesomeIcon icon={faGem} />
+                <NavText>Skills</NavText>
+              </NavHeading>
+            </LinkBox>
+            <NavHeading style={{ marginLeft: '20px' }} className="breakLine">
               <svg
                 width="90"
                 height="3"
@@ -148,7 +187,9 @@ const Nav = ({ isMobile }) => {
             <NavHeadingIcon
               whileHover={{ color: 'var(--highlight-color)' }}
               variants={navFadeIn}
-            ></NavHeadingIcon>
+            >
+              <FontAwesomeIcon icon={faLinkedin} />
+            </NavHeadingIcon>
           </NavHeadings>
         )}
       </Navigation>
@@ -166,6 +207,7 @@ const Logo = styled(motion.div)`
   font-family: 'Staatliches', cursive;
   font-weight: 400;
   font-size: var(--fs-heading);
+  z-index: 10;
   &:hover {
     cursor: pointer;
   }
@@ -196,6 +238,7 @@ const Navigation = styled(motion.nav)`
   // Small devices (landscape phones, less than 768px)
   @media (max-width: 767.98px) {
     padding: 10px 20px;
+    height: 60px;
   }
 
   // Medium devices (tablets, less than 992px)
@@ -230,21 +273,33 @@ const NavHeadings = styled(motion.ul)`
 `;
 
 const NavHeading = styled(motion.li)`
-  padding-left: 20px;
   font-size: var(--fs-sm);
   display: flex;
   align-items: center;
   &:hover:not(.breakLine) {
     cursor: pointer;
   }
+
   @media (min-width: 2000px) {
     //Do something like this to increase font sizes for 4k
+
     font-size: calc(var(--fs-sm) * 1.2);
+  }
+`;
+
+const LinkBox = styled(Link)`
+  margin-left: 20px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  &.active {
+    border-bottom: 2px solid var(--highlight-color);
   }
 `;
 
 const NavHeadingIcon = styled(NavHeading)`
   font-size: var(--fs-md);
+  margin-left: 20px;
   @media (min-width: 2000px) {
     //Do something like this to increase font sizes for 4k
     font-size: calc(var(--fs-md) * 1.2);

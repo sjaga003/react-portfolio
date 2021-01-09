@@ -141,7 +141,7 @@ const Skills = () => {
   }, [skillControls, skillInView]);
 
   return (
-    <SkillsSection>
+    <SkillsSection id="SkillsSection">
       <SkillsHeading
         ref={headingRef}
         variants={containerFadeIn}
@@ -189,7 +189,7 @@ const SkillsSection = styled.section`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 210px 0px 210px 0px;
+  padding: 0px 0px 210px 0px;
   @media (max-width: 575.98px) {
   }
 

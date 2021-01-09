@@ -94,7 +94,7 @@ const Projects = ({ isMobile }) => {
   }, [controls, inView]);
 
   return (
-    <ProjectsSection>
+    <ProjectsSection id="ProjectsSection">
       <ProjectsHeading
         ref={ref}
         variants={containerFadeIn}

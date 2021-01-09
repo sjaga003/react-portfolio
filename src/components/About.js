@@ -76,6 +76,7 @@ const About = ({ isMobile }) => {
       variants={isMobile ? containerFadeInMobile : containerFadeIn}
       initial="hidden"
       animate="show"
+      id="AboutSection"
     >
       <Hello variants={aboutFadeIn}>Hello, my name is</Hello>
       <Name variants={aboutFadeIn}>Suhas Jagannath</Name>
@@ -111,7 +112,7 @@ const AboutSection = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 100px 0px 300px 0px;
+  padding: 00px 0px 300px 0px;
 `;
 
 const Hello = styled(motion.div)`

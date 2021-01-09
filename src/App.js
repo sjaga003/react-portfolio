@@ -37,7 +37,11 @@ const Main = styled.div`
   margin: 0px auto;
   min-height: 100vh;
   padding: 0px 100px;
-
+  &::before {
+    display: block;
+    content: '';
+    height: 100px; /* or whatever */
+  }
   @media (max-width: 575.98px) {
   }
 
