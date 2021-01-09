@@ -46,6 +46,7 @@ const cardVariant = {
   show: {
     opacity: 1,
     y: 0,
+    x: 0,
     transition: {
       type: 'tween',
       ease: 'easeInOut',
@@ -54,6 +55,14 @@ const cardVariant = {
   hidden: {
     opacity: 0,
     y: 100,
+    transition: {
+      type: 'tween',
+      ease: 'easeInOut',
+    },
+  },
+  hover: {
+    x: 15,
+    y: -15,
     transition: {
       type: 'tween',
       ease: 'easeInOut',
@@ -115,7 +124,7 @@ const list = [
   },
 ];
 
-const Skills = () => {
+const Skills = ({ isMobile }) => {
   const headingControls = useAnimation();
   const [headingRef, headingInView] = useInView({ triggerOnce: true });
   const skillControls = useAnimation();
@@ -174,6 +183,7 @@ const Skills = () => {
         {list.map((skill, index) => {
           return (
             <Skill
+              isMobile={isMobile}
               cardVariant={cardVariant}
               key={`skill ${index}`}
               skill={list[index]}
@@ -265,7 +275,7 @@ const SkillsContainer = styled(motion.div)`
   @media (min-width: 2000px) {
     //Do something like this to increase font sizes for 4k
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, calc(150px * 1.2));
+    grid-template-columns: repeat(calc(150px * 1.2));
   }
 `;
 

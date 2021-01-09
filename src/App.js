@@ -23,7 +23,7 @@ function App() {
         <Main>
           <About isMobile={isMobile} />
           <Projects isMobile={isMobile} />
-          <Skills />
+          <Skills isMobile={isMobile} />
         </Main>
       </Content>
       <Footer />

@@ -87,7 +87,7 @@ const About = ({ isMobile }) => {
         explicabo laudantium deleniti amet animi, necessitatibus reprehenderit
         ratione illum provident beatae nemo, soluta architecto dolores.
       </SubHeading>
-      <motion.div variants={aboutFadeIn}>
+      <ButtonContainer variants={aboutFadeIn}>
         <ResumeButton
           href={Resume}
           target="_blank"
@@ -111,7 +111,7 @@ const About = ({ isMobile }) => {
         >
           Contact Me
         </EmailButton>
-      </motion.div>
+      </ButtonContainer>
     </AboutSection>
   );
 };
@@ -214,6 +214,10 @@ const EmailButton = styled(motion.a)`
 const ResumeButton = styled(EmailButton)`
   background: var(--highlight-color);
   color: var(--bg-color);
+`;
+
+const ButtonContainer = styled(motion.div)`
+  padding: 1rem 0rem;
 `;
 
 export default About;
