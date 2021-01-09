@@ -178,18 +178,30 @@ const Nav = ({ isMobile }) => {
                 />
               </svg>
             </NavHeading>
-            <NavHeadingIcon
-              whileHover={{ color: 'var(--highlight-color)' }}
-              variants={navFadeIn}
+            <ALink
+              href="https://github.com/sjaga003"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <FontAwesomeIcon icon={faGithub} />
-            </NavHeadingIcon>
-            <NavHeadingIcon
-              whileHover={{ color: 'var(--highlight-color)' }}
-              variants={navFadeIn}
+              <NavHeadingIcon
+                whileHover={{ color: 'var(--highlight-color)' }}
+                variants={navFadeIn}
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </NavHeadingIcon>
+            </ALink>
+            <ALink
+              href="https://www.linkedin.com/in/suhas-jagannath/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <FontAwesomeIcon icon={faLinkedin} />
-            </NavHeadingIcon>
+              <NavHeadingIcon
+                whileHover={{ color: 'var(--highlight-color)' }}
+                variants={navFadeIn}
+              >
+                <FontAwesomeIcon icon={faLinkedin} />
+              </NavHeadingIcon>
+            </ALink>
           </NavHeadings>
         )}
       </Navigation>
@@ -270,6 +282,12 @@ const NavHeadings = styled(motion.ul)`
   // Large devices (desktops, less than 1200px)
   @media (max-width: 1199.98px) {
   }
+`;
+
+const ALink = styled.a`
+  color: inherit;
+  text-decoration: none;
+  display: inherit;
 `;
 
 const NavHeading = styled(motion.li)`

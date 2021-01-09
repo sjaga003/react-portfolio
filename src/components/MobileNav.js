@@ -152,6 +152,8 @@ const MobileNav = ({ navOpen, setNavOpen }) => {
                 </LinkBox>
                 <IconItem>
                   <Icon
+                    href="https://github.com/sjaga003"
+                    target="_blank"
                     variants={hoverVariant}
                     initial={'show'}
                     whileHover={'hover'}
@@ -160,6 +162,9 @@ const MobileNav = ({ navOpen, setNavOpen }) => {
                   </Icon>
 
                   <Icon
+                    href="https://www.linkedin.com/in/suhas-jagannath/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     variants={hoverVariant}
                     initial={'show'}
                     whileHover={'hover'}
@@ -197,10 +202,11 @@ const IconContainer = styled.div`
   margin-right: 10px;
 `;
 
-const Icon = styled(motion.div)`
+const Icon = styled(motion.a)`
   cursor: pointer;
   height: 30px;
   width: 30px;
+  color: inherit;
   font-size: var(--fs-md);
 `;
 

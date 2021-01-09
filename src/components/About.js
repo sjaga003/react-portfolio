@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import Resume from '../files/Suhas_Jagannath_Resume.pdf';
 
 const containerFadeIn = {
   show: {
@@ -88,6 +89,9 @@ const About = ({ isMobile }) => {
       </SubHeading>
       <motion.div variants={aboutFadeIn}>
         <ResumeButton
+          href={Resume}
+          target="_blank"
+          rel="noopener noreferrer"
           initial="show"
           whileHover="hover"
           variants={resumeButtonHover}
@@ -95,9 +99,15 @@ const About = ({ isMobile }) => {
           View Resume
         </ResumeButton>
         <EmailButton
+          href="mailto:suhas.jagannath@email.ucr.edu"
+          target="_blank"
+          rel="noopener noreferrer"
           initial="show"
           whileHover="hover"
           variants={emailButtonHover}
+          onClick={() =>
+            window.open('mailTo:suhas.jagannath@email.ucr.edu', '_blank')
+          }
         >
           Contact Me
         </EmailButton>
@@ -165,7 +175,7 @@ const SubHeading = styled(motion.div)`
   }
 `;
 
-const EmailButton = styled(motion.button)`
+const EmailButton = styled(motion.a)`
   margin-right: 24px;
   border: 1px solid #3ea0e6;
   border-radius: 8px;
@@ -175,6 +185,7 @@ const EmailButton = styled(motion.button)`
   padding: 1rem 1.75rem;
   font-size: var(--fs-sm);
   font-weight: 500;
+  text-decoration: none;
   &:hover {
     cursor: pointer;
   }

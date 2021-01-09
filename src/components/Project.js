@@ -91,6 +91,9 @@ const Project = ({ index, project, isMobile }) => {
       {!(index % 2) ? (
         <>
           <ImageContainer
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
             variants={containerHover}
             whileHover={isMobile ? '' : 'hover'}
           >
@@ -109,10 +112,18 @@ const Project = ({ index, project, isMobile }) => {
             <ProjectDescription>{project.description}</ProjectDescription>
             <ProjectTechnology>{project.technology}</ProjectTechnology>
             <ProjectIcons>
-              <IconContainer whileHover={{ color: 'var(--highlight-color)' }}>
+              <IconContainer
+                href={project.github}
+                target="_blank"
+                whileHover={{ color: 'var(--highlight-color)' }}
+              >
                 <ProjectIcon icon={faGithub} />
               </IconContainer>
-              <IconContainer whileHover={{ color: 'var(--highlight-color)' }}>
+              <IconContainer
+                href={project.live}
+                target="_blank"
+                whileHover={{ color: 'var(--highlight-color)' }}
+              >
                 <ProjectIcon icon={faExternalLinkAlt} />
               </IconContainer>
             </ProjectIcons>
@@ -128,15 +139,29 @@ const Project = ({ index, project, isMobile }) => {
             <ProjectDescription>{project.description}</ProjectDescription>
             <ProjectTechnology>{project.technology}</ProjectTechnology>
             <ProjectIcons>
-              <IconContainer whileHover={{ color: 'var(--highlight-color)' }}>
+              <IconContainer
+                href={project.github}
+                target="_blank"
+                whileHover={{ color: 'var(--highlight-color)' }}
+              >
                 <ProjectIcon icon={faGithub} />
               </IconContainer>
-              <IconContainer whileHover={{ color: 'var(--highlight-color)' }}>
+              <IconContainer
+                href={project.live}
+                target="_blank"
+                whileHover={{ color: 'var(--highlight-color)' }}
+              >
                 <ProjectIcon icon={faExternalLinkAlt} />
               </IconContainer>
             </ProjectIcons>
           </ProjectInfo2>
-          <ImageContainer variants={containerHover} whileHover="hover">
+          <ImageContainer
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            variants={containerHover}
+            whileHover="hover"
+          >
             <ImageBackground></ImageBackground>
             <ProjectImage
               draggable={false}
@@ -201,7 +226,7 @@ const ProjectImage = styled(motion.img)`
 
 const ImageBackground = styled.div`
   border: var(--highlight-color) 2px solid;
-  width: 390px;
+  width: 380px;
   height: 290px;
   border-radius: 14.5408px;
   margin-top: 5px;
@@ -224,7 +249,7 @@ const ImageBackground = styled.div`
   }
 `;
 
-const ImageContainer = styled(motion.div)`
+const ImageContainer = styled(motion.a)`
   display: flexbox;
   width: 390px;
   height: 300px;
@@ -352,15 +377,14 @@ const ProjectTechnology = styled.div`
 
 const ProjectIcons = styled.div``;
 
-const IconContainer = styled(motion.div)`
+const IconContainer = styled(motion.a)`
   display: inline-block;
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
+  margin-right: 12px;
+  color: inherit;
 `;
 
 const ProjectIcon = styled(FontAwesomeIcon)`
-  margin-right: 12px;
   font-size: var(--fs-md);
   @media (min-width: 2000px) {
     //Do something like this to increase font sizes for 4k

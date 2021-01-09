@@ -60,8 +60,8 @@ const list = [
        reprehenderit quo asperiores dolores ab ducimus laboriosam iste pariatur rem cumque sed adipisci molestiae voluptate ad repellat?`,
     technology: 'Technology1 ⸱ Technology 2 ⸱ Technology 3',
     image: defaultImage,
-    github: 'google.com',
-    live: 'google.com',
+    github: 'https://www.google.com',
+    live: 'https://www.test.com',
   },
   {
     title: 'Project 2',
@@ -69,8 +69,8 @@ const list = [
       reprehenderit quo asperiores dolores ab ducimus laboriosam iste pariatur rem cumque sed adipisci molestiae voluptate ad repellat?`,
     technology: 'Technology1 ⸱ Technology 2 ⸱ Technology 3',
     image: defaultImage,
-    github: 'google.com',
-    live: 'google.com',
+    github: 'https://www.google.com',
+    live: 'https://www.test.com',
   },
   {
     title: 'Project 3',
@@ -78,8 +78,8 @@ const list = [
       reprehenderit quo asperiores dolores ab ducimus laboriosam iste pariatur rem cumque sed adipisci molestiae voluptate ad repellat?`,
     image: defaultImage,
     technology: 'Technology1 ⸱ Technology 2 ⸱ Technology 3',
-    github: 'google.com',
-    live: 'google.com',
+    github: 'https://www.google.com',
+    live: 'https://www.test.com',
   },
 ];
 
