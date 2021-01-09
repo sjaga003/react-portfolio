@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Project from './Project';
-import defaultImage from '../img/default_project.png';
+import defaultImage from '../images/default_project.png';
 import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';

@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
-import Nav from './components/Nav';
+import Nav from '../components/Nav';
 
 //Styles
 import styled from 'styled-components';
-import GlobalStyle from './GlobalStyles';
-import About from './components/About';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Footer from './components/Footer';
+import GlobalStyle from '../components/GlobalStyles';
+import About from '../components/About';
+import Projects from '../components/Projects';
+import Skills from '../components/Skills';
+import Footer from '../components/Footer';
 import { motion, useAnimation } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
-import ProjectMatrix from './components/ProjectMatrix';
+import ProjectMatrix from '../components/ProjectMatrix';
+import '@fontsource/fira-code';
+import '@fontsource/roboto';
+import '@fontsource/staatliches';
 
-function App() {
+// markup
+const IndexPage = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 767.98px)` });
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
@@ -39,7 +43,7 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 const Main = styled.div`
   display: flex;
@@ -83,4 +87,4 @@ const Content = styled.div`
   z-index: 0;
 `;
 
-export default App;
+export default IndexPage;

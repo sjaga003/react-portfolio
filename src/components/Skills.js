@@ -10,9 +10,9 @@ import {
   faPython,
 } from '@fortawesome/free-brands-svg-icons';
 import Skill from './Skill';
-import ArduinoLogo from '../img/Arduino_Logo.svg';
-import PSpiceLogo from '../img/PSpice_Logo.svg';
-import CLogo from '../img/C_Logo.svg';
+import ArduinoLogo from '../images/Arduino_Logo.svg';
+import PSpiceLogo from '../images/PSpice_Logo.svg';
+import CLogo from '../images/C_Logo.svg';
 import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';

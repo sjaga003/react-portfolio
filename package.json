@@ -1,48 +1,40 @@
 {
-  "name": "developer_portfolio2",
-  "version": "0.1.0",
+  "name": "portfolio-website",
+  "version": "1.0.0",
   "private": true,
+  "description": "Portfolio Website",
+  "author": "Suhas Jagannath",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
   "dependencies": {
+    "@fontsource/fira-code": "^4.1.0",
+    "@fontsource/roboto": "^4.1.0",
+    "@fontsource/staatliches": "^4.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@testing-library/jest-dom": "^5.11.8",
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.6.0",
-    "framer-motion": "^3.1.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "babel-plugin-styled-components": "^1.12.0",
+    "framer-motion": "^3.2.0",
+    "gatsby": "^2.26.1",
+    "gatsby-image": "^2.9.0",
+    "gatsby-plugin-sharp": "^2.12.0",
+    "gatsby-plugin-styled-components": "^3.8.0",
+    "gatsby-source-filesystem": "^2.9.0",
+    "gatsby-transformer-sharp": "^2.10.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-intersection-observer": "^8.31.0",
     "react-responsive": "^8.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
     "react-scroll": "^1.8.1",
-    "styled-components": "^5.2.1",
-    "web-vitals": "^0.2.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "styled-components": "^5.2.1"
   }
 }
