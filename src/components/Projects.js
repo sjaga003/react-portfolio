@@ -4,6 +4,7 @@ import defaultImage from '../img/default_project.png';
 import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import ProjectMatrix from './ProjectMatrix';
 
 const containerFadeIn = {
   show: {
@@ -83,7 +84,7 @@ const list = [
   },
 ];
 
-const Projects = ({ isMobile }) => {
+const Projects = ({ isMobile, isModalOpen, setIsModalOpen }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
 
@@ -129,7 +130,17 @@ const Projects = ({ isMobile }) => {
           );
         })}
       </ProjectsContainer>
-      <SeeMoreButton variants={buttonHover} initial="show" whileHover="hover">
+      <SeeMoreButton
+        onClick={() => {
+          setIsModalOpen(true);
+          document
+            .getElementById('ModalContainer')
+            .setAttribute('style', 'visibility: unset');
+        }}
+        variants={buttonHover}
+        initial="show"
+        whileHover="hover"
+      >
         See More
       </SeeMoreButton>
     </ProjectsSection>

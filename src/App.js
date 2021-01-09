@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Nav from './components/Nav';
 
 //Styles
@@ -10,19 +10,29 @@ import Skills from './components/Skills';
 import Footer from './components/Footer';
 import { motion, useAnimation } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
+import ProjectMatrix from './components/ProjectMatrix';
 
 function App() {
   const isMobile = useMediaQuery({ query: `(max-width: 767.98px)` });
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="App">
       <GlobalStyle />
-      <Nav isMobile={isMobile} />
 
+      <Nav isMobile={isMobile} />
+      <ProjectMatrix
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        isMobile={isMobile}
+      />
       <Content id="content">
         <Main>
           <About isMobile={isMobile} />
-          <Projects isMobile={isMobile} />
+          <Projects
+            isModalOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}
+            isMobile={isMobile}
+          />
           <Skills isMobile={isMobile} />
         </Main>
       </Content>
@@ -70,6 +80,7 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 0;
 `;
 
 export default App;

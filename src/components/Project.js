@@ -160,7 +160,8 @@ const Project = ({ index, project, isMobile }) => {
             target="_blank"
             rel="noopener noreferrer"
             variants={containerHover}
-            whileHover="hover"
+            whileHover={isMobile ? '' : 'hover'}
+            isMobile={isMobile}
           >
             <ImageBackground></ImageBackground>
             <ProjectImage
@@ -272,7 +273,7 @@ const ImageContainer = styled(motion.a)`
   @media (max-width: 1199.98px) {
   }
   &:hover {
-    cursor: pointer;
+    cursor: ${(props) => (props.isMobile ? 'unset' : 'pointer')};
   }
 `;
 
