@@ -246,7 +246,6 @@ const ProjectMatrix = ({ isModalOpen, setIsModalOpen, isMobile }) => {
       id="ModalContainer"
       onClick={(e) => {
         if (e.target.id === 'cover') {
-          console.log(e.target);
           setIsModalOpen(!isModalOpen);
         }
       }}

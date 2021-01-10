@@ -97,7 +97,7 @@ const MobileNav = ({ navOpen, setNavOpen }) => {
                   smooth={true}
                   duration={500}
                   spy={true}
-                  exact={true}
+                  exact={'true'}
                   activeClass={'active'}
                   offset={-64}
                 >
@@ -117,7 +117,7 @@ const MobileNav = ({ navOpen, setNavOpen }) => {
                   smooth={true}
                   duration={500}
                   spy={true}
-                  exact={true}
+                  exact={'true'}
                   activeClass={'active'}
                   offset={-64}
                 >
@@ -137,7 +137,7 @@ const MobileNav = ({ navOpen, setNavOpen }) => {
                   smooth={true}
                   duration={500}
                   spy={true}
-                  exact={true}
+                  exact={'true'}
                   activeClass={'active'}
                   offset={-64}
                 >

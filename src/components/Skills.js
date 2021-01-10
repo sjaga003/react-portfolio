@@ -135,16 +135,12 @@ const Skills = ({ isMobile }) => {
 
   useEffect(() => {
     if (headingInView) {
-      console.log('HELLO');
-
       headingControls.start('show');
     }
   }, [headingControls, headingInView]);
 
   useEffect(() => {
     if (skillInView) {
-      console.log('HELLO2');
-
       skillControls.start('show');
     }
   }, [skillControls, skillInView]);
