@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBars,
@@ -9,9 +9,9 @@ import {
   faFileAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
-import { AnimatePresence, motion, useAnimation } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { Link, animateScroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 import Resume from '../files/Suhas_Jagannath_Resume.pdf';
 
 const burgerVariant = {

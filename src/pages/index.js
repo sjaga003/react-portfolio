@@ -8,12 +8,14 @@ import About from '../components/About';
 import Projects from '../components/Projects';
 import Skills from '../components/Skills';
 import Footer from '../components/Footer';
-import { motion, useAnimation } from 'framer-motion';
+
 import { useMediaQuery } from 'react-responsive';
 import ProjectMatrix from '../components/ProjectMatrix';
 import '@fontsource/fira-code';
 import '@fontsource/roboto';
 import '@fontsource/staatliches';
+import Helmet from 'react-helmet';
+import favicon from '../images/SJ.svg';
 
 // markup
 const IndexPage = () => {
@@ -22,7 +24,10 @@ const IndexPage = () => {
   return (
     <div className="App">
       <GlobalStyle />
-
+      <Helmet>
+        <title>Suhas Jagannath</title>
+        <link rel="icon" href={favicon} />
+      </Helmet>
       <Nav isMobile={isMobile} />
       <ProjectMatrix
         isModalOpen={isModalOpen}

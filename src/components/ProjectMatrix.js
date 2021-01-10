@@ -1,7 +1,7 @@
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { motion, useAnimation } from 'framer-motion';
-import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
+import React from 'react';
 import styled from 'styled-components';
 
 import MatrixRow from './MatrixRow';

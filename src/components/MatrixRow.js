@@ -32,7 +32,7 @@ const MatrixRow = ({ index, project, containerFadeIn, isMobile }) => {
           return (
             <Technology>
               {tech}
-              {index == project.technology.length - 1 ? '' : ' ⸱ '}
+              {index === project.technology.length - 1 ? '' : ' ⸱ '}
             </Technology>
           );
         })}

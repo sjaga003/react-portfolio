@@ -2,17 +2,6 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 
-const skillFadeIn = {
-  show: {},
-  hidden: {},
-};
-
-const cardHover = {
-  show: {},
-  hidden: {},
-  hover: { x: 20, y: 20 },
-};
-
 const Skill = ({ skill, cardVariant, isMobile }) => {
   return (
     <SkillContainer>

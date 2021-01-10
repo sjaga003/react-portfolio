@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Project from './Project';
 import defaultImage from '../images/default_project.png';
 import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import ProjectMatrix from './ProjectMatrix';
 
 const containerFadeIn = {
   show: {
