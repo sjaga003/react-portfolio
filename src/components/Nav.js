@@ -122,7 +122,7 @@ const Nav = ({ isMobile }) => {
               smooth={true}
               duration={500}
               spy={true}
-              exact={true}
+              exact={'true'}
               activeClass={'active'}
               offset={-64}
             >
@@ -139,7 +139,7 @@ const Nav = ({ isMobile }) => {
               smooth={true}
               duration={500}
               spy={true}
-              exact={true}
+              exact={'true'}
               activeClass={'active'}
               offset={-64}
             >
@@ -156,7 +156,7 @@ const Nav = ({ isMobile }) => {
               smooth={true}
               duration={500}
               spy={true}
-              exact={true}
+              exact={'true'}
               activeClass={'active'}
               offset={-64}
             >
