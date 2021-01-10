@@ -10,20 +10,6 @@ const MatrixRow = ({ index, project, containerFadeIn, isMobile }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
 
-  const buttonHover = {
-    show: {
-      background: 'rgba(62,160,230, 0)',
-    },
-    hover: {
-      background: 'rgba(62,160,230, 0.15)',
-      transition: {
-        type: 'tween',
-        ease: 'easeInOut',
-        duration: 0.3,
-      },
-    },
-  };
-
   useEffect(() => {
     if (inView) {
       controls.start('show');
