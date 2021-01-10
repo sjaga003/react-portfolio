@@ -167,6 +167,7 @@ const containerFadeIn = {
   show: {
     opacity: 1,
     y: 0,
+    background: 'rgba(50, 58, 78, 0)',
     transition: {
       type: 'tween',
       ease: 'easeInOut',
@@ -179,6 +180,9 @@ const containerFadeIn = {
       type: 'tween',
       ease: 'easeInOut',
     },
+  },
+  hover: {
+    background: 'rgba(50, 58, 78, 1)',
   },
 };
 
@@ -261,7 +265,7 @@ const ProjectMatrix = ({ isModalOpen, setIsModalOpen, isMobile }) => {
         >
           <Content>
             <MatrixHeading>
-              Past Work
+              All Pages
               <Exit
                 onClick={() => {
                   setIsModalOpen(!isModalOpen);
@@ -359,7 +363,8 @@ const MatrixHeading = styled.div`
 
 const Table = styled.table`
   border-collapse: collapse;
-  width: 100%;
+  width: 90%;
+  margin: 0px auto;
 `;
 
 const TableBody = styled(motion.tbody)``;
@@ -367,6 +372,7 @@ const TableBody = styled(motion.tbody)``;
 const TableContainer = styled.div`
   height: 88%;
   overflow-y: scroll;
+
   &::-webkit-scrollbar {
     width: 0.5rem;
     height: 0.5rem;

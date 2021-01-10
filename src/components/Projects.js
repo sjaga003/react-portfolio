@@ -140,7 +140,7 @@ const Projects = ({ isMobile, isModalOpen, setIsModalOpen }) => {
         initial="show"
         whileHover="hover"
       >
-        See More
+        View All Projects
       </SeeMoreButton>
     </ProjectsSection>
   );

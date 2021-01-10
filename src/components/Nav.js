@@ -52,10 +52,16 @@ const navFadeIn = {
 const logoFadeIn = {
   hidden: {
     opacity: 0,
+    transition: {
+      duration: 0.5,
+    },
   },
   show: {
     opacity: 1,
     scale: 1,
+    transition: {
+      duration: 0.5,
+    },
   },
 };
 
@@ -97,12 +103,14 @@ const Nav = ({ isMobile }) => {
 
   return (
     <Transition>
-      <Navigation id="navbar">
+      <Navigation
+        id="navbar"
+        variants={logoFadeIn}
+        initial="hidden"
+        animate="show"
+      >
         <Logo
-          variants={logoFadeIn}
           whileHover={{ scale: 1.2 }}
-          initial="hidden"
-          animate="show"
           onClick={() => {
             animateScroll.scrollToTop();
           }}

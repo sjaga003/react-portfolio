@@ -10,6 +10,20 @@ const MatrixRow = ({ index, project, containerFadeIn, isMobile }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
 
+  const buttonHover = {
+    show: {
+      background: 'rgba(62,160,230, 0)',
+    },
+    hover: {
+      background: 'rgba(62,160,230, 0.15)',
+      transition: {
+        type: 'tween',
+        ease: 'easeInOut',
+        duration: 0.3,
+      },
+    },
+  };
+
   useEffect(() => {
     if (inView) {
       controls.start('show');
@@ -20,6 +34,10 @@ const MatrixRow = ({ index, project, containerFadeIn, isMobile }) => {
       ref={ref}
       variants={containerFadeIn}
       initial="hidden"
+      whileHover={{
+        backgroundColor: 'rgba(50, 58, 78, 0.6)',
+        transition: { type: 'tween', ease: 'anticipate' },
+      }}
       animate={controls}
     >
       <YearCell>{project.year}</YearCell>
@@ -39,10 +57,18 @@ const MatrixRow = ({ index, project, containerFadeIn, isMobile }) => {
       </TechnologyCell>
       <LinksCell>
         <Icons>
-          <GithubIcon>
+          <GithubIcon
+            whileHover={{ color: 'var(--highlight-color)' }}
+            href={project.github}
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faGithub} />
           </GithubIcon>
-          <LiveIcon>
+          <LiveIcon
+            whileHover={{ color: 'var(--highlight-color)' }}
+            href={project.live}
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faExternalLinkAlt} />
           </LiveIcon>
         </Icons>
@@ -51,7 +77,10 @@ const MatrixRow = ({ index, project, containerFadeIn, isMobile }) => {
   );
 };
 
-const TableRow = styled(motion.tr)``;
+const TableRow = styled(motion.tr)`
+  border-radius: 4px;
+  background: var(--bg-color);
+`;
 
 const standardCell = styled.td`
   padding: 10px;
@@ -67,6 +96,7 @@ const TechnologyCell = styled(standardCell)`
 `;
 const LinksCell = styled(standardCell)`
   max-width: 30px;
+  width: 70px;
 `;
 
 const Technology = styled.span`
@@ -74,9 +104,12 @@ const Technology = styled.span`
   white-space: pre;
 `;
 
-const GithubIcon = styled.div``;
+const GithubIcon = styled(motion.a)`
+  color: inherit;
+  cursor: pointer;
+`;
 
-const LiveIcon = styled.div`
+const LiveIcon = styled(GithubIcon)`
   margin-left: 10px;
 `;
 
