@@ -6,6 +6,19 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
+const blankVariant = {
+  show: {
+    transition: {
+      duration: 0.1,
+    },
+  },
+  hidden: {
+    transition: {
+      duration: 0.1,
+    },
+  },
+};
+
 const MatrixRow = ({ index, project, containerFadeIn, isMobile }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
@@ -18,13 +31,15 @@ const MatrixRow = ({ index, project, containerFadeIn, isMobile }) => {
   return (
     <TableRow
       ref={ref}
-      variants={containerFadeIn}
+      variants={blankVariant}
       initial="hidden"
-      whileHover={{
-        backgroundColor: 'rgba(50, 58, 78, 0.6)',
-        transition: { type: 'tween', ease: 'anticipate' },
-      }}
       animate={controls}
+      onHoverStart={(event, info) => {
+        event.target.style.backgroundColor = 'rgba(50, 58, 78, 0.6)';
+      }}
+      onHoverEnd={(event, info) => {
+        event.target.style.backgroundColor = 'unset';
+      }}
     >
       <YearCell>{project.year}</YearCell>
       <TitleCell>{project.title}</TitleCell>
@@ -71,6 +86,7 @@ const TableRow = styled(motion.tr)`
 const standardCell = styled.td`
   padding: 10px;
   text-align: left;
+  font-size: var(--fs-md);
 `;
 const YearCell = styled(standardCell)``;
 const TitleCell = styled(standardCell)`
@@ -82,7 +98,7 @@ const TechnologyCell = styled(standardCell)`
 `;
 const LinksCell = styled(standardCell)`
   max-width: 30px;
-  width: 70px;
+  /* width: 70px; */
 `;
 
 const Technology = styled.span`

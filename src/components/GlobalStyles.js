@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
         color: var(--text-color);
         font-family: 'Roboto', sans-serif;
         position:relative;
-  overflow-x:hidden;
+        overflow-x:hidden;
     }
     * {
         padding: 0;
@@ -37,6 +37,10 @@ const GlobalStyle = createGlobalStyle`
     .App {
         width: 100%;
         height: 100%;
+    }
+    .highlight {
+        color: var(--highlight-color);
+        font-weight: 600;
     }
     
     @media (max-width: 575.98px) { }

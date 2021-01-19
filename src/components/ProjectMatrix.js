@@ -264,7 +264,7 @@ const ProjectMatrix = ({ isModalOpen, setIsModalOpen, isMobile }) => {
         >
           <Content>
             <MatrixHeading>
-              All Pages
+              All Projects
               <Exit
                 onClick={() => {
                   setIsModalOpen(!isModalOpen);
@@ -393,6 +393,7 @@ const TableHeading = styled.th`
   color: var(--heading-color);
   font-weight: 600;
   font-size: var(--fs-lg);
+  max-width: 3px;
 `;
 
 const Content = styled.div`

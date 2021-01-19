@@ -4,6 +4,7 @@ import defaultImage from '../images/default_project.png';
 import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import TheCovidTracker from '../images/the_covid_tracker.png';
 
 const containerFadeIn = {
   show: {
@@ -55,18 +56,30 @@ const buttonHover = {
 
 const list = [
   {
-    title: 'Project 1',
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi praesentium dignissimos explicabo commodi,
-       reprehenderit quo asperiores dolores ab ducimus laboriosam iste pariatur rem cumque sed adipisci molestiae voluptate ad repellat?`,
-    technology: 'Technology1 ⸱ Technology 2 ⸱ Technology 3',
-    image: defaultImage,
-    github: 'https://www.google.com',
-    live: 'https://www.test.com',
+    title: 'The Covid Tracker',
+    description: (
+      <span>
+        The Covid Tracker is a simple and clean way to view COVID-19 data at a
+        glance. The Covid Tracker was built in 12 hours during the 2020
+        CutieHack Hackathon. This project was given{' '}
+        <span className="highlight">CutieHack's Best UI/UX Hack Award</span>.
+      </span>
+    ),
+    technology: 'React ⸱ Chart.js ⸱ COVID Tracking API',
+    image: TheCovidTracker,
+    github: 'https://github.com/sjaga003/TheCovidTracker',
+    live: 'https://www.suhasjagannath.com/TheCovidTracker/',
   },
   {
     title: 'Project 2',
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi praesentium dignissimos explicabo commodi,
-      reprehenderit quo asperiores dolores ab ducimus laboriosam iste pariatur rem cumque sed adipisci molestiae voluptate ad repellat?`,
+    description: (
+      <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+        praesentium dignissimos explicabo commodi, reprehenderit quo asperiores
+        dolores ab ducimus laboriosam iste pariatur rem cumque sed adipisci
+        molestiae voluptate ad repellat?
+      </span>
+    ),
     technology: 'Technology1 ⸱ Technology 2 ⸱ Technology 3',
     image: defaultImage,
     github: 'https://www.google.com',
@@ -74,10 +87,16 @@ const list = [
   },
   {
     title: 'Project 3',
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi praesentium dignissimos explicabo commodi,
-      reprehenderit quo asperiores dolores ab ducimus laboriosam iste pariatur rem cumque sed adipisci molestiae voluptate ad repellat?`,
-    image: defaultImage,
+    description: (
+      <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+        praesentium dignissimos explicabo commodi, reprehenderit quo asperiores
+        dolores ab ducimus laboriosam iste pariatur rem cumque sed adipisci
+        molestiae voluptate ad repellat?
+      </span>
+    ),
     technology: 'Technology1 ⸱ Technology 2 ⸱ Technology 3',
+    image: defaultImage,
     github: 'https://www.google.com',
     live: 'https://www.test.com',
   },
@@ -150,7 +169,7 @@ const ProjectsSection = styled(motion.section)`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 0px 0px 100px 0px;
+  padding: 150px 0px 100px 0px;
   @media (max-width: 575.98px) {
   }
 
@@ -226,7 +245,7 @@ const SeeMoreButton = styled(motion.button)`
   background: none;
   padding: 1rem 1.75rem;
   font-size: var(--fs-sm);
-  font-weight: 500;
+  font-weight: 600;
   align-self: center;
   &:hover {
     cursor: pointer;

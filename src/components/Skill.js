@@ -4,10 +4,10 @@ import styled from 'styled-components';
 
 const Skill = ({ skill, cardVariant, isMobile }) => {
   return (
-    <SkillContainer>
-      <motion.div whileHover={isMobile ? '' : 'hover'}>
+    <SkillContainer variants={cardVariant}>
+      <motion.div>
         <CardBackground></CardBackground>
-        <SkillBox variants={cardVariant}>
+        <SkillBox variants={cardVariant} whileHover={isMobile ? '' : 'hover'}>
           {skill.external ? (
             <Logo>
               <ImageBox draggable={false} src={skill.logo} alt={skill.name} />

@@ -202,8 +202,8 @@ const ProjectContainer = styled(motion.div)`
 `;
 
 const ProjectImage = styled(motion.img)`
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 14.5408px;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
   object-fit: cover;
   width: inherit;
   height: inherit;
@@ -213,7 +213,7 @@ const ProjectImage = styled(motion.img)`
 
   // Small devices (landscape phones, less than 768px)
   @media (max-width: 767.98px) {
-    filter: contrast(1) brightness(30%);
+    filter: contrast(1) brightness(30%) blur(1px);
   }
 
   // Medium devices (tablets, less than 992px)
@@ -227,9 +227,9 @@ const ProjectImage = styled(motion.img)`
 
 const ImageBackground = styled.div`
   border: var(--highlight-color) 2px solid;
-  width: 380px;
-  height: 290px;
-  border-radius: 14.5408px;
+  width: 510px;
+  height: 310px;
+  border-radius: 8px;
   margin-top: 5px;
   position: absolute;
   z-index: -1;
@@ -252,8 +252,8 @@ const ImageBackground = styled.div`
 
 const ImageContainer = styled(motion.a)`
   display: flexbox;
-  width: 390px;
-  height: 300px;
+  width: 515px;
+  height: 320px;
   @media (max-width: 575.98px) {
     width: 80vw;
     height: 60vh;
@@ -263,6 +263,7 @@ const ImageContainer = styled(motion.a)`
   @media (max-width: 767.98px) {
     width: 80vw;
     height: 75vh;
+    pointer-events: none;
   }
 
   // Medium devices (tablets, less than 992px)
@@ -386,10 +387,10 @@ const IconContainer = styled(motion.a)`
 `;
 
 const ProjectIcon = styled(FontAwesomeIcon)`
-  font-size: var(--fs-md);
+  font-size: var(--fs-lg);
   @media (min-width: 2000px) {
     //Do something like this to increase font sizes for 4k
-    font-size: calc(var(--fs-md) * 1.2);
+    font-size: calc(var(--fs-lg) * 1.2);
   }
 `;
 
