@@ -56,7 +56,7 @@ const Contact = () => {
   }, [headingControls, headingInView]);
 
   return (
-    <ContactSection>
+    <ContactSection id="ContactSection">
       <ContactHeading
         ref={headingRef}
         variants={containerFadeIn}
@@ -78,7 +78,7 @@ const Contact = () => {
             strokeWidth="3"
           />
         </BreakLine>
-        Contact Me
+        Get In Touch
         <BreakLine
           width="280"
           height="2"
@@ -146,7 +146,7 @@ const ContactSection = styled(motion.section)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 150px 0px 100px 0px;
+  padding: 100px 0px 100px 0px;
   @media (max-width: 575.98px) {
   }
 

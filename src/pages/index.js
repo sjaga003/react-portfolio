@@ -16,6 +16,7 @@ import '@fontsource/roboto';
 import '@fontsource/staatliches';
 import Helmet from 'react-helmet';
 import favicon from '../images/SJ.svg';
+import Contact from '../components/Contact';
 
 // markup
 const IndexPage = () => {
@@ -43,6 +44,7 @@ const IndexPage = () => {
             isMobile={isMobile}
           />
           <Skills isMobile={isMobile} />
+          <Contact id="contact" />
         </Main>
       </Content>
       <Footer />
@@ -55,7 +57,8 @@ const Main = styled.div`
   flex-direction: column;
   margin: 0px auto;
   min-height: 100vh;
-  padding: 0px 100px;
+  padding: 0px 8vw;
+  overflow-x: hidden;
   &::before {
     display: block;
     content: '';

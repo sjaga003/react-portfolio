@@ -6,6 +6,7 @@ import {
   faLaptopCode,
   faGem,
   faFileAlt,
+  faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
@@ -174,6 +175,23 @@ const Nav = ({ isMobile }) => {
               >
                 <FontAwesomeIcon icon={faGem} />
                 <NavText>Skills</NavText>
+              </NavHeading>
+            </LinkBox>
+            <LinkBox
+              to="ContactSection"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact={'true'}
+              activeClass={'active'}
+              offset={-64}
+            >
+              <NavHeading
+                whileHover={{ color: 'var(--highlight-color)' }}
+                variants={navFadeIn}
+              >
+                <FontAwesomeIcon icon={faEnvelope} />
+                <NavText>Contact</NavText>
               </NavHeading>
             </LinkBox>
             <NavHeading style={{ marginLeft: '20px' }} className="breakLine">

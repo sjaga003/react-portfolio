@@ -7,6 +7,7 @@ import {
   faTimes,
   faUser,
   faFileAlt,
+  faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -55,7 +56,7 @@ const MobileNav = ({ navOpen, setNavOpen }) => {
 
       element.setAttribute(
         'style',
-        `filter: blur(4px); transition: all 0.3s; `
+        `filter: blur(3px); transition: all 0.3s; `
       );
     } else {
       document.body.setAttribute('style', 'overflow: unset');
@@ -83,6 +84,7 @@ const MobileNav = ({ navOpen, setNavOpen }) => {
                 setNavOpen(!navOpen);
               }
             }}
+            exit="initial"
           >
             <MobileMenu
               variants={navVariant}
@@ -152,38 +154,83 @@ const MobileNav = ({ navOpen, setNavOpen }) => {
                     <NavText>Skills</NavText>
                   </ListItem>
                 </LinkBox>
-                <IconItem>
-                  <Icon
-                    href="https://github.com/sjaga003"
-                    target="_blank"
+                <LinkBox
+                  to="ContactSection"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact={'true'}
+                  activeClass={'active'}
+                  offset={-64}
+                >
+                  <ListItem
                     variants={hoverVariant}
                     initial={'show'}
                     whileHover={'hover'}
                   >
-                    <FontAwesomeIcon icon={faGithub} />
-                  </Icon>
+                    <IconContainer>
+                      <FontAwesomeIcon icon={faEnvelope} />
+                    </IconContainer>
+                    <NavText>Contact</NavText>
+                  </ListItem>
+                </LinkBox>
+                <ListItem>
+                  <svg
+                    width="120"
+                    height="20"
+                    viewBox="0 0 90 3"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ margin: '5px 0px' }}
+                  >
+                    <motion.path
+                      d="M0.238281 1.44046H89.3949"
+                      stroke="#BCBCBC"
+                      stroke-width="2.07341"
+                    />
+                  </svg>
+                </ListItem>
+                <Icon href="https://github.com/sjaga003" target="_blank">
+                  <ListItem
+                    variants={hoverVariant}
+                    initial={'show'}
+                    whileHover={'hover'}
+                  >
+                    <IconContainer>
+                      <FontAwesomeIcon icon={faGithub} />
+                    </IconContainer>
 
-                  <Icon
-                    href="https://www.linkedin.com/in/suhas-jagannath/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    <NavText>Github</NavText>
+                  </ListItem>
+                </Icon>
+                <Icon
+                  href="https://www.linkedin.com/in/suhas-jagannath/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ListItem
                     variants={hoverVariant}
                     initial={'show'}
                     whileHover={'hover'}
                   >
-                    <FontAwesomeIcon icon={faLinkedin} />
-                  </Icon>
-                  <Icon
-                    href={Resume}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    <IconContainer>
+                      <FontAwesomeIcon icon={faLinkedin} />
+                    </IconContainer>
+                    <NavText>LinkedIn</NavText>
+                  </ListItem>
+                </Icon>
+                <Icon href={Resume} target="_blank" rel="noopener noreferrer">
+                  <ListItem
                     variants={hoverVariant}
                     initial={'show'}
                     whileHover={'hover'}
                   >
-                    <FontAwesomeIcon icon={faFileAlt} />
-                  </Icon>
-                </IconItem>
+                    <IconContainer>
+                      <FontAwesomeIcon icon={faFileAlt} />
+                    </IconContainer>
+                    <NavText>Resume</NavText>
+                  </ListItem>
+                </Icon>
               </List>
             </MobileMenu>
           </MenuContainer>
@@ -200,9 +247,6 @@ const BurgerIcon = styled(FontAwesomeIcon)`
 `;
 const ExitIcon = styled(FontAwesomeIcon)`
   font-size: 30px;
-  position: absolute;
-  top: -10px;
-  right: -25px;
 `;
 
 const NavText = styled.span``;
@@ -216,11 +260,13 @@ const IconContainer = styled.div`
 
 const Icon = styled(motion.a)`
   cursor: pointer;
-  height: fit-content;
-  width: fit-content;
-  margin-right: 20px;
   color: inherit;
-  font-size: var(--fs-md);
+  text-decoration: none;
+  font-size: var(--fs-lg);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  margin-right: 10px;
 `;
 
 const BurgerContainer = styled(motion.div)`
@@ -251,7 +297,7 @@ const List = styled.ul`
   display: flex;
   flex-direction: column;
 
-  width: 50%;
+  /* width: 50%; */
   justify-content: left;
   align-items: flex-start;
   @media (max-width: 575.98px) {
@@ -264,18 +310,10 @@ const ListItem = styled(motion.li)`
   cursor: pointer;
   font-size: var(--fs-lg);
   color: var(--text-color);
-
+  width: fit-content;
   @media (max-width: 575.98px) {
     font-size: var(--fs-sm);
   }
-`;
-
-const IconItem = styled(ListItem)`
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 20px;
-  align-self: center;
-  cursor: unset;
 `;
 
 const MobileMenu = styled(motion.div)`
