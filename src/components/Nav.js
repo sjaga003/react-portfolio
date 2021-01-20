@@ -350,8 +350,9 @@ const LinkBox = styled(Link)`
   height: 30px;
   display: flex;
   justify-content: center;
-  &.active {
-    border-bottom: 2px solid var(--highlight-color);
+  color: var(--text-color);
+  &.active li {
+    color: var(--highlight-color) !important;
   }
 `;
 
