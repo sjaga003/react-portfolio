@@ -111,8 +111,6 @@ const Nav = ({ isMobile }) => {
         prevScrollpos = currentScrollPos;
       }
     };
-    window.scrollTo(0, 0);
-    document.getElementById('navbar').style.top = '0';
   }
 
   return (
