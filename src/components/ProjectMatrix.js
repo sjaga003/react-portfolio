@@ -230,7 +230,7 @@ const blockVariant = {
   },
 };
 
-const ProjectMatrix = ({ isModalOpen, setIsModalOpen, isMobile }) => {
+const ProjectMatrix = ({ isModalOpen, setIsModalOpen }) => {
   if (typeof document !== `undefined`) {
     try {
       const element = document.getElementById('content');
@@ -263,7 +263,6 @@ const ProjectMatrix = ({ isModalOpen, setIsModalOpen, isMobile }) => {
           inital="hidden"
           variants={modalFadeIn}
           animate={isModalOpen ? 'show' : 'hidden'}
-          isMobile={isMobile}
         >
           <Content>
             <MatrixHeading>
@@ -282,9 +281,7 @@ const ProjectMatrix = ({ isModalOpen, setIsModalOpen, isMobile }) => {
                   <tr>
                     <TableHeading>Year</TableHeading>
                     <TableHeading>Title</TableHeading>
-                    <TableHeading isMobile={isMobile}>
-                      Created With
-                    </TableHeading>
+                    <TableHeading>Created With</TableHeading>
                     <TableHeading>Link</TableHeading>
                   </tr>
                 </thead>
@@ -296,7 +293,6 @@ const ProjectMatrix = ({ isModalOpen, setIsModalOpen, isMobile }) => {
                         index={index}
                         project={List[index]}
                         containerFadeIn={containerFadeIn}
-                        isMobile={isMobile}
                       />
                     );
                   })}

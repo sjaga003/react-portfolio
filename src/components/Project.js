@@ -96,7 +96,6 @@ const Project = ({ index, project, isMobile }) => {
         variants={containerHover}
         whileHover={isMobile ? '' : 'hover'}
         index={index}
-        isMobile={isMobile}
       >
         <ImageBackground></ImageBackground>
 

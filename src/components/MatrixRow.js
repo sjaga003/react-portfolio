@@ -19,7 +19,7 @@ const blankVariant = {
   },
 };
 
-const MatrixRow = ({ index, project, containerFadeIn, isMobile }) => {
+const MatrixRow = ({ index, project, containerFadeIn }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
 
