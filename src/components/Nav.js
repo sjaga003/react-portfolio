@@ -98,6 +98,10 @@ const Nav = ({ isMobile }) => {
         } else {
           document.getElementById('navbar').style.top = '-500px';
         }
+        if (currentScrollPos === 0) {
+          document.getElementById('navbar').style.top = '0';
+          window.scrollTo(0, 0);
+        }
         prevScrollpos = currentScrollPos;
       }
     };
