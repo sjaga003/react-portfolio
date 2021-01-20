@@ -49,7 +49,7 @@ const hoverVariant = {
 };
 
 const MobileNav = ({ navOpen, setNavOpen }) => {
-  if (document != null) {
+  if (typeof document !== `undefined`) {
     try {
       const element = document.getElementById('content');
       if (navOpen) {

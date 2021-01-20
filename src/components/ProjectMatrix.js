@@ -231,7 +231,7 @@ const blockVariant = {
 };
 
 const ProjectMatrix = ({ isModalOpen, setIsModalOpen, isMobile }) => {
-  if (document != null) {
+  if (typeof document !== `undefined`) {
     try {
       const element = document.getElementById('content');
       if (isModalOpen) {

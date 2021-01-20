@@ -150,7 +150,7 @@ const Projects = ({ isMobile, isModalOpen, setIsModalOpen }) => {
       </ProjectsContainer>
       <SeeMoreButton
         onClick={() => {
-          if (document != null) {
+          if (typeof window !== `undefined`) {
             setIsModalOpen(true);
             document
               .getElementById('ModalContainer')

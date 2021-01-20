@@ -81,7 +81,7 @@ const fillLine = {
 
 const Nav = ({ isMobile }) => {
   const [navOpen, setNavOpen] = useState(false);
-  if (window != null) {
+  if (typeof document !== `undefined`) {
     var prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
       if (!navOpen) {
