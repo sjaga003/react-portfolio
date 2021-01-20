@@ -81,26 +81,27 @@ const fillLine = {
 
 const Nav = ({ isMobile }) => {
   const [navOpen, setNavOpen] = useState(false);
-
-  var prevScrollpos = window.pageYOffset;
-  window.onscroll = function () {
-    if (!navOpen) {
-      var currentScrollPos = window.pageYOffset;
-      if (currentScrollPos < 18) {
-        document.getElementById('navbar').style.boxShadow =
-          '0px 10px 30px -15px rgba(0, 0, 0, 0)';
-      } else {
-        document.getElementById('navbar').style.boxShadow =
-          '0px 10px 30px -15px rgba(0, 0, 0, 0.7)';
+  if (window != null) {
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      if (!navOpen) {
+        var currentScrollPos = window.pageYOffset;
+        if (currentScrollPos < 18) {
+          document.getElementById('navbar').style.boxShadow =
+            '0px 10px 30px -15px rgba(0, 0, 0, 0)';
+        } else {
+          document.getElementById('navbar').style.boxShadow =
+            '0px 10px 30px -15px rgba(0, 0, 0, 0.7)';
+        }
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById('navbar').style.top = '0';
+        } else {
+          document.getElementById('navbar').style.top = '-500px';
+        }
+        prevScrollpos = currentScrollPos;
       }
-      if (prevScrollpos > currentScrollPos) {
-        document.getElementById('navbar').style.top = '0';
-      } else {
-        document.getElementById('navbar').style.top = '-500px';
-      }
-      prevScrollpos = currentScrollPos;
-    }
-  };
+    };
+  }
 
   return (
     <Transition>

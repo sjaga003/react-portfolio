@@ -49,20 +49,22 @@ const hoverVariant = {
 };
 
 const MobileNav = ({ navOpen, setNavOpen }) => {
-  try {
-    const element = document.getElementById('content');
-    if (navOpen) {
-      document.body.setAttribute('style', ` overflow: hidden; height: 100%;`);
+  if (document != null) {
+    try {
+      const element = document.getElementById('content');
+      if (navOpen) {
+        document.body.setAttribute('style', ` overflow: hidden; height: 100%;`);
 
-      element.setAttribute(
-        'style',
-        `filter: blur(3px); transition: all 0.3s; `
-      );
-    } else {
-      document.body.setAttribute('style', 'overflow: unset');
-      element.setAttribute('style', 'transition: all 0.3s');
-    }
-  } catch {}
+        element.setAttribute(
+          'style',
+          `filter: blur(3px); transition: all 0.3s; `
+        );
+      } else {
+        document.body.setAttribute('style', 'overflow: unset');
+        element.setAttribute('style', 'transition: all 0.3s');
+      }
+    } catch {}
+  }
   return (
     <>
       <BurgerContainer

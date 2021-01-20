@@ -150,10 +150,12 @@ const Projects = ({ isMobile, isModalOpen, setIsModalOpen }) => {
       </ProjectsContainer>
       <SeeMoreButton
         onClick={() => {
-          setIsModalOpen(true);
-          document
-            .getElementById('ModalContainer')
-            .setAttribute('style', 'visibility: unset');
+          if (document != null) {
+            setIsModalOpen(true);
+            document
+              .getElementById('ModalContainer')
+              .setAttribute('style', 'visibility: unset');
+          }
         }}
         variants={buttonHover}
         initial="show"

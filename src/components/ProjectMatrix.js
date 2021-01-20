@@ -231,15 +231,17 @@ const blockVariant = {
 };
 
 const ProjectMatrix = ({ isModalOpen, setIsModalOpen, isMobile }) => {
-  try {
-    const element = document.getElementById('content');
-    if (isModalOpen) {
-      document.body.setAttribute('style', ` overflow: hidden; height: 100%;`);
-    } else {
-      document.body.setAttribute('style', 'overflow: unset');
-      element.setAttribute('style', 'transition: all 0.3s');
-    }
-  } catch {}
+  if (document != null) {
+    try {
+      const element = document.getElementById('content');
+      if (isModalOpen) {
+        document.body.setAttribute('style', ` overflow: hidden; height: 100%;`);
+      } else {
+        document.body.setAttribute('style', 'overflow: unset');
+        element.setAttribute('style', 'transition: all 0.3s');
+      }
+    } catch {}
+  }
 
   return (
     <Background
