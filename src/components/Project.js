@@ -209,6 +209,7 @@ const ImageContainer = styled(motion.a)`
   display: flexbox;
   width: 515px;
   height: 320px;
+  cursor: 'pointer';
   ${({ index }) =>
     index % 2
       ? css`
@@ -224,6 +225,8 @@ const ImageContainer = styled(motion.a)`
   @media (max-width: 767.98px) {
     width: 100%;
     height: 420px;
+    cursor: 'unset';
+    pointer-events: none;
   }
 
   // Medium devices (tablets, less than 992px)
@@ -233,15 +236,6 @@ const ImageContainer = styled(motion.a)`
   // Large devices (desktops, less than 1200px)
   @media (max-width: 1199.98px) {
   }
-  ${({ isMobile }) =>
-    isMobile
-      ? css`
-          cursor: 'unset';
-          pointer-events: none;
-        `
-      : css`
-          cursor: 'pointer';
-        `}
 `;
 
 const ProjectInfo = styled.div`

@@ -340,15 +340,13 @@ const Modal = styled(motion.div)`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  ${({ isMobile }) =>
-    isMobile &&
-    css`
-      width: 100vw;
-      height: 100vh;
-      top: 0;
-      left: 0;
-      border-radius: 0px;
-    `}
+  @media (max-width: 767.98px) {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    border-radius: 0px;
+  }
 `;
 
 const Exit = styled.span`
@@ -401,14 +399,10 @@ const TableHeading = styled.th`
   font-weight: 600;
   font-size: var(--fs-lg);
   max-width: 3px;
-  ${({ isMobile }) =>
-    isMobile
-      ? css`
-          display: none;
-        `
-      : css`
-          display: table-cell;
-        `}
+  display: table-cell;
+  @media (max-width: 767.98px) {
+    display: none;
+  }
 `;
 
 const Content = styled.div`

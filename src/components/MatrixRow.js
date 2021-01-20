@@ -43,7 +43,7 @@ const MatrixRow = ({ index, project, containerFadeIn, isMobile }) => {
     >
       <YearCell>{project.year}</YearCell>
       <TitleCell>{project.title}</TitleCell>
-      <TechnologyCell key={index} isMobile={isMobile}>
+      <TechnologyCell key={index}>
         {project.technology.map((tech, index) => {
           return (
             <Technology key={index}>
@@ -92,14 +92,10 @@ const TitleCell = styled(standardCell)`
 const TechnologyCell = styled(standardCell)`
   max-width: 100px;
   font-family: 'Fira Code', monospace;
-  ${({ isMobile }) =>
-    isMobile
-      ? css`
-          display: none;
-        `
-      : css`
-          display: table-cell;
-        `}
+  display: table-cell;
+  @media (max-width: 767.98px) {
+    display: none;
+  }
 `;
 const LinksCell = styled(standardCell)`
   max-width: 30px;
