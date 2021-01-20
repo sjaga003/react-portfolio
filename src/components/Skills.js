@@ -192,7 +192,7 @@ const Skills = ({ isMobile }) => {
 };
 
 const SkillsSection = styled.section`
-  min-height: 90vh;
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
   padding: 100px 0px 100px 0px;

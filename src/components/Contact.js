@@ -8,8 +8,7 @@ const containerFadeIn = {
     opacity: 1,
     y: 0,
     transition: {
-      staggerChildren: 0.15,
-      when: 'beforeChildren',
+      delay: 0.5,
     },
   },
   hidden: { opacity: 0, y: -100 },
@@ -43,7 +42,9 @@ const buttonHover = {
 
 const Contact = () => {
   const headingControls = useAnimation();
-  const [headingRef, headingInView] = useInView({ triggerOnce: true });
+  const [headingRef, headingInView] = useInView({});
+  const contactControls = useAnimation();
+  const [contactRef, contactInView] = useInView({});
 
   const [nameText, setNameText] = useState('');
   const [emailText, setEmailText] = useState('');
@@ -54,6 +55,12 @@ const Contact = () => {
       headingControls.start('show');
     }
   }, [headingControls, headingInView]);
+
+  useEffect(() => {
+    if (contactInView) {
+      contactControls.start('show');
+    }
+  }, [contactControls, contactInView]);
 
   return (
     <ContactSection id="ContactSection">
@@ -94,7 +101,12 @@ const Contact = () => {
           />
         </BreakLine>
       </ContactHeading>
-      <FormContainer>
+      <FormContainer
+        variants={containerFadeIn}
+        initial="hidden"
+        animate={contactControls}
+        ref={contactRef}
+      >
         <form action="/FormSuccess" name="contact" method="POST" netlify>
           <input type="hidden" name="form-name" value="contact" />
           <NameBox>
