@@ -95,7 +95,7 @@ const Contact = () => {
         </BreakLine>
       </ContactHeading>
       <FormContainer>
-        <form name="contact" method="POST" data-netlify="true">
+        <form action="/FormSuccess" name="contact" method="POST" netlify>
           <NameBox>
             <Input
               type="text"
