@@ -28,6 +28,7 @@ const IndexPage = () => {
       <Helmet>
         <title>Suhas Jagannath</title>
         <link rel="icon" href={favicon} />
+        <meta name="theme-color" content="var(--bg-color)" />
       </Helmet>
       <Nav isMobile={isMobile} />
       <ProjectMatrix
@@ -63,7 +64,7 @@ const Main = styled.div`
   &::before {
     display: block;
     content: '';
-    height: 100px; /* or whatever */
+    height: 100px;
   }
   @media (max-width: 575.98px) {
   }
@@ -74,6 +75,11 @@ const Main = styled.div`
     align-items: center;
     justify-content: center;
     padding: 0px 20px;
+    &::before {
+      display: none;
+      content: '';
+      height: 100px;
+    }
   }
 
   // Medium devices (tablets, less than 992px)
