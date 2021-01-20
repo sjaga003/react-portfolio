@@ -83,11 +83,17 @@ const Nav = ({ isMobile }) => {
   const [navOpen, setNavOpen] = useState(false);
   if (typeof document !== `undefined`) {
     var prevScrollpos = window.pageYOffset;
-    window.scrollTo(0, 0);
+
     window.onscroll = function () {
       if (!navOpen) {
         var currentScrollPos = window.pageYOffset;
-        if (currentScrollPos < 18) {
+        var threshold = 0;
+        if (isMobile) {
+          threshold = 30;
+        } else {
+          threshold = 18;
+        }
+        if (currentScrollPos < threshold) {
           document.getElementById('navbar').style.boxShadow =
             '0px 10px 30px -15px rgba(0, 0, 0, 0)';
         } else {
@@ -105,6 +111,8 @@ const Nav = ({ isMobile }) => {
         prevScrollpos = currentScrollPos;
       }
     };
+    window.scrollTo(0, 0);
+    document.getElementById('navbar').style.top = '0';
   }
 
   return (
