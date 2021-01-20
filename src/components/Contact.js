@@ -197,7 +197,7 @@ const ContactHeading = styled(motion.h1)`
 `;
 
 const BreakLine = styled.svg`
-  margin: 0px 24px;
+  margin: 0px 20px;
   @media (max-width: 575.98px) {
   }
 
