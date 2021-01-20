@@ -96,6 +96,7 @@ const Contact = () => {
       </ContactHeading>
       <FormContainer>
         <form action="/FormSuccess" name="contact" method="POST" netlify>
+          <input type="hidden" name="form-name" value="contact" />
           <NameBox>
             <Input
               type="text"
