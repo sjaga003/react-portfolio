@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -43,10 +43,7 @@ const MatrixRow = ({ index, project, containerFadeIn, isMobile }) => {
     >
       <YearCell>{project.year}</YearCell>
       <TitleCell>{project.title}</TitleCell>
-      <TechnologyCell
-        key={index}
-        style={isMobile ? { display: 'none' } : { display: 'table-cell' }}
-      >
+      <TechnologyCell key={index} isMobile={isMobile}>
         {project.technology.map((tech, index) => {
           return (
             <Technology key={index}>
@@ -95,6 +92,14 @@ const TitleCell = styled(standardCell)`
 const TechnologyCell = styled(standardCell)`
   max-width: 100px;
   font-family: 'Fira Code', monospace;
+  ${({ isMobile }) =>
+    isMobile
+      ? css`
+          display: none;
+        `
+      : css`
+          display: table-cell;
+        `}
 `;
 const LinksCell = styled(standardCell)`
   max-width: 30px;

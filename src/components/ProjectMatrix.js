@@ -282,13 +282,7 @@ const ProjectMatrix = ({ isModalOpen, setIsModalOpen, isMobile }) => {
                   <tr>
                     <TableHeading>Year</TableHeading>
                     <TableHeading>Title</TableHeading>
-                    <TableHeading
-                      style={
-                        isMobile
-                          ? { display: 'none' }
-                          : { display: 'table-cell' }
-                      }
-                    >
+                    <TableHeading isMobile={isMobile}>
                       Created With
                     </TableHeading>
                     <TableHeading>Link</TableHeading>
@@ -407,6 +401,14 @@ const TableHeading = styled.th`
   font-weight: 600;
   font-size: var(--fs-lg);
   max-width: 3px;
+  ${({ isMobile }) =>
+    isMobile
+      ? css`
+          display: none;
+        `
+      : css`
+          display: table-cell;
+        `}
 `;
 
 const Content = styled.div`

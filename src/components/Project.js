@@ -96,6 +96,7 @@ const Project = ({ index, project, isMobile }) => {
         variants={containerHover}
         whileHover={isMobile ? '' : 'hover'}
         index={index}
+        isMobile={isMobile}
       >
         <ImageBackground></ImageBackground>
 
@@ -232,9 +233,15 @@ const ImageContainer = styled(motion.a)`
   // Large devices (desktops, less than 1200px)
   @media (max-width: 1199.98px) {
   }
-  &:hover {
-    cursor: ${(props) => (props.isMobile ? 'unset' : 'pointer')};
-  }
+  ${({ isMobile }) =>
+    isMobile
+      ? css`
+          cursor: 'unset';
+          pointer-events: none;
+        `
+      : css`
+          cursor: 'pointer';
+        `}
 `;
 
 const ProjectInfo = styled.div`
