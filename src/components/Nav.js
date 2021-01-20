@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -112,6 +112,13 @@ const Nav = ({ isMobile }) => {
       }
     };
   }
+
+  useEffect(() => {
+    if (typeof document !== `undefined`) {
+      window.scrollTo(0, 0);
+      document.getElementById('navbar').style.top = '0';
+    }
+  }, []);
 
   return (
     <Transition>
