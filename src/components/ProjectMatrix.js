@@ -353,6 +353,7 @@ const Modal = styled(motion.div)`
       height: 100vh;
       top: 0;
       left: 0;
+      border-radius: 0px;
     `}
 `;
 
