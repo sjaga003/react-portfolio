@@ -60,9 +60,10 @@ const list = [
     description: (
       <span>
         The Covid Tracker is a simple and clean way to view COVID-19 data at a
-        glance. The Covid Tracker was built in 12 hours during the 2020
-        CutieHack Hackathon. This project was given{' '}
+        glance. This project was given{' '}
         <span className="highlight">CutieHack's Best UI/UX Hack Award</span>.
+        The Covid Tracker was built in 12 hours during the 2020 CutieHack
+        Hackathon.
       </span>
     ),
     technology: 'React ⸱ Chart.js ⸱ COVID Tracking API',
@@ -172,17 +173,16 @@ const ProjectsSection = styled(motion.section)`
   display: flex;
   flex-direction: column;
   padding: 150px 0px 100px 0px;
+  width: 100%;
   @media (max-width: 575.98px) {
   }
 
   // Small devices (landscape phones, less than 768px)
   @media (max-width: 767.98px) {
-    width: 100%;
   }
 
   // Medium devices (tablets, less than 992px)
   @media (max-width: 991.98px) {
-    width: 100%;
   }
 
   // Large devices (desktops, less than 1200px)

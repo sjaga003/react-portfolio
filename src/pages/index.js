@@ -59,6 +59,7 @@ const Main = styled.div`
   min-height: 100vh;
   padding: 0px 8vw;
   overflow-x: hidden;
+
   &::before {
     display: block;
     content: '';

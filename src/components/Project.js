@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -88,93 +88,46 @@ const Project = ({ index, project, isMobile }) => {
       variants={containerFadeIn}
     >
       {/* If index is even image on left side, if index is odd image on right side */}
-      {!(index % 2) ? (
-        <>
-          <ImageContainer
+
+      <ImageContainer
+        href={project.live}
+        target="_blank"
+        rel="noopener noreferrer"
+        variants={containerHover}
+        whileHover={isMobile ? '' : 'hover'}
+        index={index}
+      >
+        <ImageBackground></ImageBackground>
+
+        <ProjectImage
+          draggable={false}
+          src={project.image}
+          alt={`Project ${index}`}
+          variants={index % 2 ? projectHoverRight : projectHoverLeft}
+        />
+      </ImageContainer>
+
+      <ProjectInfo index={index}>
+        <ProjectTitle>{project.title}</ProjectTitle>
+        <ProjectDescription>{project.description}</ProjectDescription>
+        <ProjectTechnology>{project.technology}</ProjectTechnology>
+        <ProjectIcons>
+          <IconContainer
+            href={project.github}
+            target="_blank"
+            whileHover={{ color: 'var(--highlight-color)' }}
+          >
+            <ProjectIcon icon={faGithub} />
+          </IconContainer>
+          <IconContainer
             href={project.live}
             target="_blank"
-            rel="noopener noreferrer"
-            variants={containerHover}
-            whileHover={isMobile ? '' : 'hover'}
+            whileHover={{ color: 'var(--highlight-color)' }}
           >
-            <ImageBackground></ImageBackground>
-
-            <ProjectImage
-              draggable={false}
-              src={project.image}
-              alt={`Project ${index}`}
-              variants={projectHoverLeft}
-            />
-          </ImageContainer>
-
-          <ProjectInfo>
-            <ProjectTitle>{project.title}</ProjectTitle>
-            <ProjectDescription>{project.description}</ProjectDescription>
-            <ProjectTechnology>{project.technology}</ProjectTechnology>
-            <ProjectIcons>
-              <IconContainer
-                href={project.github}
-                target="_blank"
-                whileHover={{ color: 'var(--highlight-color)' }}
-              >
-                <ProjectIcon icon={faGithub} />
-              </IconContainer>
-              <IconContainer
-                href={project.live}
-                target="_blank"
-                whileHover={{ color: 'var(--highlight-color)' }}
-              >
-                <ProjectIcon icon={faExternalLinkAlt} />
-              </IconContainer>
-            </ProjectIcons>
-          </ProjectInfo>
-        </>
-      ) : (
-        ''
-      )}
-      {index % 2 ? (
-        <>
-          <ProjectInfo2>
-            <ProjectTitle>{project.title}</ProjectTitle>
-            <ProjectDescription>{project.description}</ProjectDescription>
-            <ProjectTechnology>{project.technology}</ProjectTechnology>
-            <ProjectIcons>
-              <IconContainer
-                href={project.github}
-                target="_blank"
-                whileHover={{ color: 'var(--highlight-color)' }}
-              >
-                <ProjectIcon icon={faGithub} />
-              </IconContainer>
-              <IconContainer
-                href={project.live}
-                target="_blank"
-                whileHover={{ color: 'var(--highlight-color)' }}
-              >
-                <ProjectIcon icon={faExternalLinkAlt} />
-              </IconContainer>
-            </ProjectIcons>
-          </ProjectInfo2>
-          <ImageContainer
-            href={project.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            variants={containerHover}
-            whileHover={isMobile ? '' : 'hover'}
-            isMobile={isMobile}
-          >
-            <ImageBackground></ImageBackground>
-            <ProjectImage
-              draggable={false}
-              src={project.image}
-              alt={`Project ${index}`}
-              variants={projectHoverRight}
-            />
-          </ImageContainer>
-        </>
-      ) : (
-        ''
-      )}
+            <ProjectIcon icon={faExternalLinkAlt} />
+          </IconContainer>
+        </ProjectIcons>
+      </ProjectInfo>
     </ProjectContainer>
   );
 };
@@ -190,6 +143,7 @@ const ProjectContainer = styled(motion.div)`
   @media (max-width: 767.98px) {
     flex-direction: column;
     justify-content: center;
+    padding-bottom: 100px;
   }
 
   // Medium devices (tablets, less than 992px)
@@ -213,7 +167,7 @@ const ProjectImage = styled(motion.img)`
 
   // Small devices (landscape phones, less than 768px)
   @media (max-width: 767.98px) {
-    filter: contrast(1) brightness(30%) blur(1px);
+    box-shadow: none;
   }
 
   // Medium devices (tablets, less than 992px)
@@ -254,16 +208,21 @@ const ImageContainer = styled(motion.a)`
   display: flexbox;
   width: 515px;
   height: 320px;
+  ${({ index }) =>
+    index % 2
+      ? css`
+          order: 2;
+        `
+      : css`
+          order: 1;
+        `}
   @media (max-width: 575.98px) {
-    width: 80vw;
-    height: 60vh;
   }
 
   // Small devices (landscape phones, less than 768px)
   @media (max-width: 767.98px) {
-    width: 80vw;
-    height: 75vh;
-    pointer-events: none;
+    width: 100%;
+    height: 420px;
   }
 
   // Medium devices (tablets, less than 992px)
@@ -282,43 +241,40 @@ const ProjectInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 80px;
+  max-width: 450px;
   z-index: 2;
-  @media (max-width: 575.98px) {
-    height: 60vh !important;
-    width: 70vw !important;
-  }
-
-  // Small devices (landscape phones, less than 768px)
-  @media (max-width: 767.98px) {
-    position: absolute;
-    margin-left: 0px;
-    height: 40vh;
-    width: 60vw;
-  }
-
-  // Medium devices (tablets, less than 992px)
-  @media (max-width: 991.98px) {
-  }
-
-  // Large devices (desktops, less than 1200px)
-  @media (max-width: 1199.98px) {
-  }
-`;
-
-const ProjectInfo2 = styled(ProjectInfo)`
-  margin-right: 80px;
-  margin-left: 0px;
+  ${({ index }) =>
+    index % 2
+      ? css`
+          order: 1;
+          margin-right: 80px;
+        `
+      : css`
+          order: 2;
+          margin-left: 80px;
+        `}
   @media (max-width: 575.98px) {
   }
 
   // Small devices (landscape phones, less than 768px)
   @media (max-width: 767.98px) {
-    margin-right: 0px;
+    order: 2;
+    margin: 20px 0px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    max-width: 100%;
   }
 
   // Medium devices (tablets, less than 992px)
   @media (max-width: 991.98px) {
+    ${({ index }) =>
+      index % 2
+        ? css`
+            margin-right: 20px;
+          `
+        : css`
+            margin-left: 20px;
+          `}
   }
 
   // Large devices (desktops, less than 1200px)
@@ -330,6 +286,9 @@ const ProjectTitle = styled.h2`
   color: var(--heading-color);
   font-size: var(--fs-xl);
   padding-bottom: 8px;
+  @media (max-width: 767.98px) {
+    font-size: calc(var(--fs-xl) * 1.2);
+  }
   @media (min-width: 2000px) {
     //Do something like this to increase font sizes for 4k
     font-size: calc(var(--fs-xl) * 1.2);
@@ -340,7 +299,7 @@ const ProjectDescription = styled.div`
   font-size: var(--fs-sm);
   padding-bottom: 8px;
   line-height: 22px;
-  width: 450px;
+  width: inherit;
   @media (max-width: 575.98px) {
     width: inherit;
     height: inherit;
@@ -348,6 +307,7 @@ const ProjectDescription = styled.div`
 
   // Small devices (landscape phones, less than 768px)
   @media (max-width: 767.98px) {
+    font-size: calc(var(--fs-sm) * 1.2);
     width: inherit;
   }
 
@@ -371,6 +331,9 @@ const ProjectTechnology = styled.div`
   padding-bottom: 8px;
   font-size: var(--fs-xs);
   color: var(--highlight-color);
+  @media (max-width: 767.98px) {
+    font-size: calc(var(--fs-xs) * 1.2);
+  }
   @media (min-width: 2000px) {
     //Do something like this to increase font sizes for 4k
     font-size: calc(var(--fs-xs) * 1.2);
@@ -388,6 +351,9 @@ const IconContainer = styled(motion.a)`
 
 const ProjectIcon = styled(FontAwesomeIcon)`
   font-size: var(--fs-lg);
+  @media (max-width: 767.98px) {
+    font-size: calc(var(--fs-lg) * 1.2);
+  }
   @media (min-width: 2000px) {
     //Do something like this to increase font sizes for 4k
     font-size: calc(var(--fs-lg) * 1.2);
