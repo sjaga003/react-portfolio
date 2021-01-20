@@ -83,6 +83,7 @@ const Nav = ({ isMobile }) => {
   const [navOpen, setNavOpen] = useState(false);
   if (typeof document !== `undefined`) {
     var prevScrollpos = window.pageYOffset;
+    window.scrollTo(0, 0);
     window.onscroll = function () {
       if (!navOpen) {
         var currentScrollPos = window.pageYOffset;
@@ -100,7 +101,6 @@ const Nav = ({ isMobile }) => {
         }
         if (currentScrollPos === 0) {
           document.getElementById('navbar').style.top = '0';
-          window.scrollTo(0, 0);
         }
         prevScrollpos = currentScrollPos;
       }

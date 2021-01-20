@@ -28,7 +28,7 @@ const IndexPage = () => {
       <Helmet>
         <title>Suhas Jagannath</title>
         <link rel="icon" href={favicon} />
-        <meta name="theme-color" content="#999999" />
+        <meta name="theme-color" content={'var(--bg-color)'} />
       </Helmet>
       <Nav isMobile={isMobile} />
       <ProjectMatrix
