@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Resume from '../files/Suhas_Jagannath_Resume.pdf';
-import { Link, animateScroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 const containerFadeIn = {
   show: {
