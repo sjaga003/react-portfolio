@@ -28,7 +28,6 @@ const IndexPage = () => {
       <Helmet>
         <title>Suhas Jagannath</title>
         <link rel="icon" href={favicon} />
-        <meta name="viewport" content="minimum-scale=1"></meta>
       </Helmet>
       <Nav isMobile={isMobile} />
       <ProjectMatrix
