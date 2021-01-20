@@ -19,6 +19,8 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color: transparent;
         --bg-color: #171c28;
         --secondary-color: #323A4E;
         --text-color: #BCBCBC;
