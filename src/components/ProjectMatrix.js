@@ -2,7 +2,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import MatrixRow from './MatrixRow';
 
@@ -263,6 +263,7 @@ const ProjectMatrix = ({ isModalOpen, setIsModalOpen, isMobile }) => {
           inital="hidden"
           variants={modalFadeIn}
           animate={isModalOpen ? 'show' : 'hidden'}
+          isMobile={isMobile}
         >
           <Content>
             <MatrixHeading>
@@ -345,6 +346,14 @@ const Modal = styled(motion.div)`
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  ${({ isMobile }) =>
+    isMobile &&
+    css`
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+    `}
 `;
 
 const Exit = styled.span`
@@ -373,6 +382,7 @@ const TableBody = styled(motion.tbody)``;
 const TableContainer = styled.div`
   height: 88%;
   overflow-y: scroll;
+  padding-right: 20px;
 
   &::-webkit-scrollbar {
     width: 0.5rem;
