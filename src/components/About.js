@@ -97,21 +97,22 @@ const About = ({ isMobile }) => {
         >
           View Resume
         </ResumeButton>
-        <EmailButton
-          initial="show"
-          whileHover="hover"
-          variants={emailButtonHover}
+
+        <Link
+          to="ContactSection"
+          smooth={true}
+          duration={500}
+          spy={true}
+          exact={'true'}
         >
-          <Link
-            to="ContactSection"
-            smooth={true}
-            duration={500}
-            spy={true}
-            exact={'true'}
+          <EmailButton
+            initial="show"
+            whileHover="hover"
+            variants={emailButtonHover}
           >
             Contact Me
-          </Link>
-        </EmailButton>
+          </EmailButton>
+        </Link>
       </ButtonContainer>
     </AboutSection>
   );
