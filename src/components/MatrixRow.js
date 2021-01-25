@@ -55,20 +55,24 @@ const MatrixRow = ({ index, project, containerFadeIn }) => {
       </TechnologyCell>
       <LinksCell>
         <Icons>
-          <GithubIcon
-            whileHover={{ color: 'var(--highlight-color)' }}
-            href={project.github}
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-          </GithubIcon>
-          <LiveIcon
-            whileHover={{ color: 'var(--highlight-color)' }}
-            href={project.live}
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faExternalLinkAlt} />
-          </LiveIcon>
+          {project.github && (
+            <GithubIcon
+              whileHover={{ color: 'var(--highlight-color)' }}
+              href={project.github}
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </GithubIcon>
+          )}
+          {project.live && (
+            <LiveIcon
+              whileHover={{ color: 'var(--highlight-color)' }}
+              href={project.live}
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faExternalLinkAlt} />
+            </LiveIcon>
+          )}
         </Icons>
       </LinksCell>
     </TableRow>
