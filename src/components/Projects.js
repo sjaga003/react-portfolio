@@ -7,7 +7,6 @@ import { useInView } from 'react-intersection-observer';
 import TheCovidTracker from '../images/the_covid_tracker.png';
 import AirQualityVisualizer from '../images/air_quality_visualizer.png';
 import CovidCube from '../images/covid_cube.png';
-import CovidCube2 from '../images/covid_cube2.png';
 
 const containerFadeIn = {
   show: {
@@ -72,7 +71,7 @@ const list = [
     technology: 'React ⸱ Chart.js ⸱ Netlify ⸱ COVID Tracking API',
     image: TheCovidTracker,
     github: 'https://github.com/sjaga003/TheCovidTracker',
-    live: 'https://www.suhasjagannath.com/TheCovidTracker/',
+    live: 'https://silly-knuth-d69f04.netlify.app/',
   },
   {
     title: 'Covid Puzzle Cube',
