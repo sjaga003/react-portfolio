@@ -179,7 +179,7 @@ const SubHeading = styled(motion.div)`
 
 const EmailButton = styled(motion.span)`
   margin-right: 24px;
-  border: 1px solid #3ea0e6;
+  border: 2px solid var(--highlight-color);
   border-radius: 8px;
   font-family: 'Fira Code', monospace;
   color: var(--highlight-color);
@@ -215,7 +215,7 @@ const EmailButton = styled(motion.span)`
 
 const ResumeButton = styled(motion.a)`
   margin-right: 24px;
-  border: 1px solid #3ea0e6;
+  border: 2px solid var(--highlight-color);
   border-radius: 8px;
   font-family: 'Fira Code', monospace;
   color: var(--highlight-color);

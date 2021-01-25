@@ -329,6 +329,6 @@ const MobileMenu = styled(motion.div)`
   width: 40vw;
   height: 100vh;
   z-index: 3;
-  background: rgba(23, 28, 40, 1);
+  background: var(--bg-color);
   box-shadow: -10px 0px 30px #000;
 `;

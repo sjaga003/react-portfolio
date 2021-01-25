@@ -7,6 +7,8 @@ import {
   faGem,
   faFileAlt,
   faEnvelope,
+  faSun,
+  faMoon,
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
@@ -60,9 +62,7 @@ const logoFadeIn = {
   show: {
     opacity: 1,
     scale: 1,
-    transition: {
-      duration: 0.5,
-    },
+    transition: {},
   },
 };
 
@@ -79,7 +79,7 @@ const fillLine = {
   },
 };
 
-const Nav = ({ isMobile }) => {
+const Nav = ({ isMobile, setTheme, theme }) => {
   const [navOpen, setNavOpen] = useState(false);
   if (typeof document !== `undefined`) {
     var prevScrollpos = window.pageYOffset;
@@ -122,16 +122,14 @@ const Nav = ({ isMobile }) => {
 
   return (
     <Transition>
-      <Navigation
-        id="navbar"
-        variants={logoFadeIn}
-        initial="hidden"
-        animate="show"
-      >
+      <Navigation id="navbar">
         <Logo
           whileHover={{ scale: 1.2 }}
+          variants={logoFadeIn}
+          initial="hidden"
+          animate="show"
           onClick={() => {
-            animateScroll.scrollToTop();
+            setTheme(theme == 'light' ? 'dark' : 'light');
           }}
         >
           SJ
@@ -223,7 +221,7 @@ const Nav = ({ isMobile }) => {
                 <motion.path
                   variants={fillLine}
                   d="M0.238281 1.44046H89.3949"
-                  stroke="#BCBCBC"
+                  stroke="var(--text-color)"
                   stroke-width="2.07341"
                 />
               </svg>
@@ -269,7 +267,7 @@ const Nav = ({ isMobile }) => {
 
 const Transition = styled.div`
   #navbar {
-    transition: all 0.5s;
+    transition: all 0.5s, background 0s;
   }
 `;
 
@@ -297,6 +295,7 @@ const Navigation = styled(motion.nav)`
   position: fixed;
   width: 100%;
   z-index: 30;
+  user-select: none;
 
   @media (max-width: 575.98px) {
   }
@@ -345,6 +344,7 @@ const ALink = styled.a`
 `;
 
 const NavHeading = styled(motion.li)`
+  color: var(--text-color);
   font-size: var(--fs-sm);
   display: flex;
   align-items: center;

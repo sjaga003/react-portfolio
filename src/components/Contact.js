@@ -357,7 +357,7 @@ const ButtonBox = styled(motion.div)`
 
 const SendButton = styled(motion.button)`
   margin-right: 48px;
-  border: 1px solid #3ea0e6;
+  border: 1px solid var(--highlight-color);
   border-radius: 8px;
   font-family: 'Fira Code', monospace;
   color: var(--highlight-color);

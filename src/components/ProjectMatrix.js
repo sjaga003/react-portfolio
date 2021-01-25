@@ -258,7 +258,7 @@ const TableBody = styled(motion.tbody)``;
 
 const TableContainer = styled.div`
   height: 88%;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding-right: 20px;
 
   &::-webkit-scrollbar {

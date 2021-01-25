@@ -8,14 +8,7 @@ const Skill = ({ skill, cardVariant, isMobile }) => {
       <motion.div>
         <CardBackground></CardBackground>
         <SkillBox variants={cardVariant} whileHover={isMobile ? '' : 'hover'}>
-          {skill.external ? (
-            <Logo>
-              <ImageBox draggable={false} src={skill.logo} alt={skill.name} />
-            </Logo>
-          ) : (
-            <Logo>{skill.logo}</Logo>
-          )}
-
+          <Logo>{skill.logo}</Logo>
           <SkillName>{skill.name}</SkillName>
         </SkillBox>
       </motion.div>
@@ -59,11 +52,6 @@ const CardBackground = styled.div`
   // Large devices (desktops, less than 1200px)
   @media (max-width: 1199.98px) {
   }
-`;
-
-const ImageBox = styled.img`
-  width: var(--fs-skill-icons);
-  user-select: none;
 `;
 
 const Logo = styled.div`

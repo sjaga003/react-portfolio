@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Nav from '../components/Nav';
 
 //Styles
-import styled from 'styled-components';
-import GlobalStyle from '../components/GlobalStyles';
+import styled, { ThemeProvider } from 'styled-components';
+import { GlobalStyle, lightTheme, darkTheme } from '../components/GlobalStyles';
 import About from '../components/About';
 import Projects from '../components/Projects';
 import Skills from '../components/Skills';
@@ -22,33 +22,37 @@ import Contact from '../components/Contact';
 const IndexPage = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 767.98px)` });
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [theme, setTheme] = useState('dark');
+
   return (
     <div className="App">
-      <GlobalStyle />
-      <Helmet>
-        <title>Suhas Jagannath</title>
-        <link rel="icon" href={favicon} />
-        <meta name="theme-color" content="#171c28" />
-      </Helmet>
-      <Nav isMobile={isMobile} />
-      <ProjectMatrix
-        isModalOpen={isModalOpen}
-        setIsModalOpen={setIsModalOpen}
-        isMobile={isMobile}
-      />
-      <Content id="content">
-        <Main>
-          <About isMobile={isMobile} />
-          <Projects
-            isModalOpen={isModalOpen}
-            setIsModalOpen={setIsModalOpen}
-            isMobile={isMobile}
-          />
-          <Skills isMobile={isMobile} />
-          <Contact id="contact" />
-        </Main>
-      </Content>
-      <Footer />
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+        <GlobalStyle />
+        <Helmet>
+          <title>Suhas Jagannath</title>
+          <link rel="icon" href={favicon} />
+          <meta name="theme-color" content="#171c28" />
+        </Helmet>
+        <Nav theme={theme} setTheme={setTheme} isMobile={isMobile} />
+        <ProjectMatrix
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          isMobile={isMobile}
+        />
+        <Content id="content">
+          <Main>
+            <About isMobile={isMobile} />
+            <Projects
+              isModalOpen={isModalOpen}
+              setIsModalOpen={setIsModalOpen}
+              isMobile={isMobile}
+            />
+            <Skills isMobile={isMobile} />
+            <Contact id="contact" />
+          </Main>
+        </Content>
+        <Footer />
+      </ThemeProvider>
     </div>
   );
 };
