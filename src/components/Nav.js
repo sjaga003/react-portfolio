@@ -293,15 +293,11 @@ const Navigation = styled(motion.nav)`
   justify-content: space-between;
   align-items: center;
   padding: 12px 80px;
-  background: rgba(23, 28, 40, 1);
+  background: var(--bg-color);
   position: fixed;
   width: 100%;
   z-index: 30;
 
-  /* position: sticky;
-  top: 0;
-  background: var(--bg-color);
-   */
   @media (max-width: 575.98px) {
   }
 

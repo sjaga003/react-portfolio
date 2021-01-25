@@ -35,6 +35,11 @@ const GlobalStyle = createGlobalStyle`
         --fs-title: 64px;
         --fs-title-m: 48px;
         --fs-skill-icons: 64px;
+        --button-default: rgba(62,160,230, 0);
+        --button-hovered: rgba(62,160,230, 0.15);
+        --table-row-hover: rgba(50, 58, 78, 0.6);
+        --secondary-color-visible: rgba(50, 58, 78, 1);
+        --secondary-color-hidden: rgba(50, 58, 78, 0);
     }
     .App {
         width: 100%;

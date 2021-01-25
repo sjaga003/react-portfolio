@@ -44,10 +44,10 @@ const fillLine = {
 
 const buttonHover = {
   show: {
-    background: 'rgba(62,160,230, 0)',
+    background: 'var(--button-hovered)',
   },
   hover: {
-    background: 'rgba(62,160,230, 0.15)',
+    background: 'var(--button-default)',
     transition: {
       type: 'tween',
       ease: 'easeInOut',

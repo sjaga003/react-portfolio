@@ -35,7 +35,7 @@ const MatrixRow = ({ index, project, containerFadeIn }) => {
       initial="hidden"
       animate={controls}
       onHoverStart={(event, info) => {
-        event.target.style.backgroundColor = 'rgba(50, 58, 78, 0.6)';
+        event.target.style.backgroundColor = 'var(--table-row-hover)';
       }}
       onHoverEnd={(event, info) => {
         event.target.style.backgroundColor = 'unset';

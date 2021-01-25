@@ -55,7 +55,7 @@ const containerFadeIn = {
   show: {
     opacity: 1,
     y: 0,
-    background: 'rgba(50, 58, 78, 0)',
+    background: 'var(--secondary-color-hidden)',
     transition: {
       type: 'tween',
       ease: 'easeInOut',
@@ -70,7 +70,7 @@ const containerFadeIn = {
     },
   },
   hover: {
-    background: 'rgba(50, 58, 78, 1)',
+    background: 'var(--secondary-color-visible)',
   },
 };
 
