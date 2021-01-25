@@ -5,6 +5,9 @@ import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import TheCovidTracker from '../images/the_covid_tracker.png';
+import AirQualityVisualizer from '../images/air_quality_visualizer.png';
+import CovidCube from '../images/covid_cube.png';
+import CovidCube2 from '../images/covid_cube2.png';
 
 const containerFadeIn = {
   show: {
@@ -59,47 +62,48 @@ const list = [
     title: 'The Covid Tracker',
     description: (
       <span>
-        The Covid Tracker is a simple and clean way to view COVID-19 data at a
-        glance. This project was given{' '}
-        <span className="highlight">CutieHack's Best UI/UX Hack Award</span>.
-        The Covid Tracker was built in 12 hours during the 2020 CutieHack
-        Hackathon.
+        A simple and clean way to view COVID-19 data at a glance. Built in 12
+        hours and given CutieHack 2020's{' '}
+        <span className="highlight"> Best UI/UX Hack Award</span>. Includes a
+        daily case increase data visualization and the ability to view
+        historical COVID-19 data.
       </span>
     ),
-    technology: 'React ⸱ Chart.js ⸱ COVID Tracking API',
+    technology: 'React ⸱ Chart.js ⸱ Netlify ⸱ COVID Tracking API',
     image: TheCovidTracker,
     github: 'https://github.com/sjaga003/TheCovidTracker',
     live: 'https://www.suhasjagannath.com/TheCovidTracker/',
   },
   {
-    title: 'Project 2',
+    title: 'Covid Puzzle Cube',
     description: (
       <span>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-        praesentium dignissimos explicabo commodi, reprehenderit quo asperiores
-        dolores ab ducimus laboriosam iste pariatur rem cumque sed adipisci
-        molestiae voluptate ad repellat?
+        An embedded system puzzle box that educated users on COVID‑19
+        precautions in a fun and interactive way. Includes 5 puzzles with covid
+        covid themed precautions as solutions. Uses{' '}
+        <span className="highlight">multiple Ardunios and Raspberry Pis</span>{' '}
+        to communicate with each other and to a mobile app.
       </span>
     ),
-    technology: 'Technology1 ⸱ Technology 2 ⸱ Technology 3',
-    image: defaultImage,
-    github: 'https://www.google.com',
-    live: 'https://www.test.com',
+    technology: 'Raspberry Pi ⸱ Arduino ⸱ Bluetooth  ⸱ Python ⸱ C++',
+    image: CovidCube,
+    github: 'https://github.com/sjaga003/CovidCube',
+    live: 'https://www.youtube.com/watch?v=7beyGCJO7LQ',
   },
   {
-    title: 'Project 3',
+    title: 'Air Quality Visualizer',
     description: (
       <span>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-        praesentium dignissimos explicabo commodi, reprehenderit quo asperiores
-        dolores ab ducimus laboriosam iste pariatur rem cumque sed adipisci
-        molestiae voluptate ad repellat?
+        The Air Quality Visualizer was originally built when there were massive
+        wildfires in California, and the air quality was difficult to keep track
+        of. The air quality data is pulled from an API and the visualizer
+        corresponds to the current quality rating.
       </span>
     ),
-    technology: 'Technology1 ⸱ Technology 2 ⸱ Technology 3',
-    image: defaultImage,
-    github: 'https://www.google.com',
-    live: 'https://www.test.com',
+    technology: 'React ⸱ HTML ⸱ CSS ⸱ Air Now API',
+    image: AirQualityVisualizer,
+    github: 'https://github.com/sjaga003/AirQualityVisualizer',
+    live: 'https://pensive-brahmagupta-1d2112.netlify.app/',
   },
 ];
 

@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
     }
     .highlight {
         color: var(--highlight-color);
-        font-weight: 600;
+        /* font-weight: 600; */
     }
     
     @media (max-width: 575.98px) { }
