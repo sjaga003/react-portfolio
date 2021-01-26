@@ -130,7 +130,6 @@ const Nav = ({ isMobile, setTheme, theme }) => {
           initial="hidden"
           animate="show"
           onClick={() => {
-            console.log(theme);
             if (typeof window !== 'undefined') {
               theme === 'light' || null
                 ? window.localStorage.setItem('theme', 'dark')
