@@ -243,7 +243,7 @@ const ProjectsHeading = styled(motion.h1)`
 
 const SeeMoreButton = styled(motion.button)`
   margin-right: 48px;
-  border: 1px solid var(--highlight-color);
+  border: 2px solid var(--highlight-color);
   border-radius: 8px;
   font-family: 'Fira Code', monospace;
   color: var(--highlight-color);

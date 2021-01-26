@@ -19,7 +19,7 @@ export const lightTheme = {
   buttonHovered: 'rgba(0,101,209, 0.3)',
   buttonTextDefault: '#3EA0E6',
   buttonTextHovered: '#e8e8e8',
-  tableRowHover: 'rgba(50, 58, 78, 0.6)',
+  tableRowHover: '#c3c3c3',
   secondaryColorVisible: 'rgba(50, 58, 78, 1)',
   secondaryColorHidden: 'rgba(50, 58, 78, 0)',
 };

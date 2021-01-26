@@ -115,14 +115,26 @@ const Project = ({ index, project, isMobile }) => {
           <IconContainer
             href={project.github}
             target="_blank"
-            whileHover={{ color: 'var(--highlight-color)' }}
+            onHoverStart={(event, info) => {
+              event.target.style.color = 'var(--highlight-color)';
+              event.target.style.transition = 'all 0.2s ease-in-out';
+            }}
+            onHoverEnd={(event, info) => {
+              event.target.style.color = 'unset';
+            }}
           >
             <ProjectIcon icon={faGithub} />
           </IconContainer>
           <IconContainer
             href={project.live}
             target="_blank"
-            whileHover={{ color: 'var(--highlight-color)' }}
+            onHoverStart={(event, info) => {
+              event.target.style.color = 'var(--highlight-color)';
+              event.target.style.transition = 'all 0.2s ease-in-out';
+            }}
+            onHoverEnd={(event, info) => {
+              event.target.style.color = 'unset';
+            }}
           >
             <ProjectIcon icon={faExternalLinkAlt} />
           </IconContainer>

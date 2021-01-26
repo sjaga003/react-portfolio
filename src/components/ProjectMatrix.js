@@ -156,6 +156,13 @@ const ProjectMatrix = ({ isModalOpen, setIsModalOpen }) => {
             <MatrixHeading>
               All Projects
               <Exit
+                onHoverStart={(event, info) => {
+                  event.target.style.color = 'var(--highlight-color)';
+                  event.target.style.transition = 'all 0.2s ease-in-out';
+                }}
+                onHoverEnd={(event, info) => {
+                  event.target.style.color = 'unset';
+                }}
                 onClick={() => {
                   setIsModalOpen(!isModalOpen);
                 }}
@@ -233,7 +240,7 @@ const Modal = styled(motion.div)`
   }
 `;
 
-const Exit = styled.span`
+const Exit = styled(motion.span)`
   cursor: pointer;
 `;
 

@@ -57,7 +57,13 @@ const MatrixRow = ({ index, project, containerFadeIn }) => {
         <Icons>
           {project.github && (
             <GithubIcon
-              whileHover={{ color: 'var(--highlight-color)' }}
+              onHoverStart={(event, info) => {
+                event.target.style.color = 'var(--highlight-color)';
+                event.target.style.transition = 'all 0.2s ease-in-out';
+              }}
+              onHoverEnd={(event, info) => {
+                event.target.style.color = 'unset';
+              }}
               href={project.github}
               target="_blank"
             >
@@ -66,7 +72,13 @@ const MatrixRow = ({ index, project, containerFadeIn }) => {
           )}
           {project.live && (
             <LiveIcon
-              whileHover={{ color: 'var(--highlight-color)' }}
+              onHoverStart={(event, info) => {
+                event.target.style.color = 'var(--highlight-color)';
+                event.target.style.transition = 'all 0.2s ease-in-out';
+              }}
+              onHoverEnd={(event, info) => {
+                event.target.style.color = 'unset';
+              }}
               href={project.live}
               target="_blank"
             >
@@ -112,7 +124,7 @@ const Technology = styled.span`
 `;
 
 const GithubIcon = styled(motion.a)`
-  color: inherit;
+  color: var(--text-color);
   cursor: pointer;
 `;
 
@@ -124,6 +136,7 @@ const Icons = styled.div`
   display: flex;
   flex-direction: row;
   font-size: var(--fs-lg);
+  color: var(--text-color);
 `;
 
 export default MatrixRow;

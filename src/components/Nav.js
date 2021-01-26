@@ -32,6 +32,7 @@ const navFadeIn = {
   show: {
     opacity: 1,
     y: 0,
+
     transition: {
       type: 'tween',
       ease: 'easeInOut',
@@ -152,7 +153,13 @@ const Nav = ({ isMobile, setTheme, theme }) => {
               offset={-64}
             >
               <NavHeading
-                whileHover={{ color: 'var(--highlight-color)' }}
+                onHoverStart={(event, info) => {
+                  event.target.style.color = 'var(--highlight-color)';
+                  event.target.style.transition = 'all 0.2s ease-in-out';
+                }}
+                onHoverEnd={(event, info) => {
+                  event.target.style.color = 'unset';
+                }}
                 variants={navFadeIn}
               >
                 <FontAwesomeIcon icon={faUser} />
@@ -169,7 +176,13 @@ const Nav = ({ isMobile, setTheme, theme }) => {
               offset={-64}
             >
               <NavHeading
-                whileHover={{ color: 'var(--highlight-color)' }}
+                onHoverStart={(event, info) => {
+                  event.target.style.color = 'var(--highlight-color)';
+                  event.target.style.transition = 'all 0.2s ease-in-out';
+                }}
+                onHoverEnd={(event, info) => {
+                  event.target.style.color = 'unset';
+                }}
                 variants={navFadeIn}
               >
                 <FontAwesomeIcon icon={faLaptopCode} />
@@ -186,7 +199,13 @@ const Nav = ({ isMobile, setTheme, theme }) => {
               offset={-64}
             >
               <NavHeading
-                whileHover={{ color: 'var(--highlight-color)' }}
+                onHoverStart={(event, info) => {
+                  event.target.style.color = 'var(--highlight-color)';
+                  event.target.style.transition = 'all 0.2s ease-in-out';
+                }}
+                onHoverEnd={(event, info) => {
+                  event.target.style.color = 'unset';
+                }}
                 variants={navFadeIn}
               >
                 <FontAwesomeIcon icon={faGem} />
@@ -203,7 +222,13 @@ const Nav = ({ isMobile, setTheme, theme }) => {
               offset={-64}
             >
               <NavHeading
-                whileHover={{ color: 'var(--highlight-color)' }}
+                onHoverStart={(event, info) => {
+                  event.target.style.color = 'var(--highlight-color)';
+                  event.target.style.transition = 'all 0.2s ease-in-out';
+                }}
+                onHoverEnd={(event, info) => {
+                  event.target.style.color = 'unset';
+                }}
                 variants={navFadeIn}
               >
                 <FontAwesomeIcon icon={faEnvelope} />
@@ -232,7 +257,13 @@ const Nav = ({ isMobile, setTheme, theme }) => {
               rel="noopener noreferrer"
             >
               <NavHeadingIcon
-                whileHover={{ color: 'var(--highlight-color)' }}
+                onHoverStart={(event, info) => {
+                  event.target.style.color = 'var(--highlight-color)';
+                  event.target.style.transition = 'all 0.2s ease-in-out';
+                }}
+                onHoverEnd={(event, info) => {
+                  event.target.style.color = 'unset';
+                }}
                 variants={navFadeIn}
               >
                 <FontAwesomeIcon icon={faGithub} />
@@ -244,7 +275,13 @@ const Nav = ({ isMobile, setTheme, theme }) => {
               rel="noopener noreferrer"
             >
               <NavHeadingIcon
-                whileHover={{ color: 'var(--highlight-color)' }}
+                onHoverStart={(event, info) => {
+                  event.target.style.color = 'var(--highlight-color)';
+                  event.target.style.transition = 'all 0.2s ease-in-out';
+                }}
+                onHoverEnd={(event, info) => {
+                  event.target.style.color = 'unset';
+                }}
                 variants={navFadeIn}
               >
                 <FontAwesomeIcon icon={faLinkedin} />
@@ -252,7 +289,13 @@ const Nav = ({ isMobile, setTheme, theme }) => {
             </ALink>
             <ALink href={Resume} target="_blank" rel="noopener noreferrer">
               <NavHeadingIcon
-                whileHover={{ color: 'var(--highlight-color)' }}
+                onHoverStart={(event, info) => {
+                  event.target.style.color = 'var(--highlight-color)';
+                  event.target.style.transition = 'all 0.2s ease-in-out';
+                }}
+                onHoverEnd={(event, info) => {
+                  event.target.style.color = 'unset';
+                }}
                 variants={navFadeIn}
               >
                 <FontAwesomeIcon icon={faFileAlt} />
@@ -320,6 +363,7 @@ const NavHeadings = styled(motion.ul)`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  color: var(--text-color);
   @media (max-width: 575.98px) {
   }
 
