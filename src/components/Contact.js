@@ -107,7 +107,7 @@ const Contact = () => {
         animate={contactControls}
         ref={contactRef}
       >
-        <form action="/FormSuccess" name="contact" method="POST" netlify>
+        <form action="/FormSuccess" name="contact" method="POST" netlify="true">
           <input type="hidden" name="form-name" value="contact" />
           <NameBox>
             <Input

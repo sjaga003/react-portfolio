@@ -4,7 +4,10 @@ import styled from 'styled-components';
 const Footer = () => {
   return (
     <FooterContainer>
-      <CenterText href="https://github.com/sjaga003" target="_blank">
+      <CenterText
+        href="https://github.com/sjaga003/react-portfolio"
+        target="_blank"
+      >
         Built & Designed by Suhas Jagannath
       </CenterText>
     </FooterContainer>

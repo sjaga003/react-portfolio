@@ -188,7 +188,7 @@ const MobileNav = ({ navOpen, setNavOpen }) => {
                     <motion.path
                       d="M0.238281 1.44046H89.3949"
                       stroke="#BCBCBC"
-                      stroke-width="2.07341"
+                      strokeWidth="2.07341"
                     />
                   </svg>
                 </ListItem>

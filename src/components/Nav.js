@@ -7,13 +7,11 @@ import {
   faGem,
   faFileAlt,
   faEnvelope,
-  faSun,
-  faMoon,
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
 import MobileNav from '../components/MobileNav';
-import { Link, animateScroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 import Resume from '../files/Suhas_Jagannath_Resume.pdf';
 
 const containerFadeIn = {
@@ -134,7 +132,7 @@ const Nav = ({ isMobile, setTheme, theme }) => {
               theme === 'light' || null
                 ? window.localStorage.setItem('theme', 'dark')
                 : window.localStorage.setItem('theme', 'light');
-              theme == 'light' ? setTheme('dark') : setTheme('light');
+              theme === 'light' ? setTheme('dark') : setTheme('light');
             }
           }}
         >
@@ -252,7 +250,7 @@ const Nav = ({ isMobile, setTheme, theme }) => {
                   variants={fillLine}
                   d="M0.238281 1.44046H89.3949"
                   stroke="var(--text-color)"
-                  stroke-width="2.07341"
+                  strokeWidth="2.07341"
                 />
               </svg>
             </NavHeading>
