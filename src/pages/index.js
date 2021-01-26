@@ -22,7 +22,7 @@ import Contact from '../components/Contact';
 const IndexPage = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 767.98px)` });
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(window.localStorage.getItem('theme'));
 
   return (
     <div className="App">

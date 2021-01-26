@@ -130,7 +130,13 @@ const Nav = ({ isMobile, setTheme, theme }) => {
           initial="hidden"
           animate="show"
           onClick={() => {
-            setTheme(theme == 'light' ? 'dark' : 'light');
+            console.log(theme);
+            if (typeof window !== 'undefined') {
+              theme === 'light' || null
+                ? window.localStorage.setItem('theme', 'dark')
+                : window.localStorage.setItem('theme', 'light');
+              theme == 'light' ? setTheme('dark') : setTheme('light');
+            }
           }}
         >
           SJ
