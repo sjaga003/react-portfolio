@@ -107,6 +107,7 @@ const TitleCell = styled(standardCell)`
 `;
 const TechnologyCell = styled(standardCell)`
   max-width: 100px;
+  min-width: 200px;
   font-family: 'Fira Code', monospace;
   display: table-cell;
   @media (max-width: 767.98px) {

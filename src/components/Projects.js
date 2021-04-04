@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import TheCovidTracker from '../images/the_covid_tracker.png';
+import YumFood from '../images/Yum_Food_Website.png';
 import AirQualityVisualizer from '../images/air_quality_visualizer.png';
 import CovidCube from '../images/covid_cube.png';
 
@@ -57,6 +58,25 @@ const buttonHover = {
 };
 
 const list = [
+  {
+    title: 'Yum',
+    description: (
+      <span>
+        Yum provides users with easy to browse recipes that can be saved with a
+        simple and responsive design. It is built as a{' '}
+        <span className="highlight">full stack</span> application and uses the
+        <span className="highlight"> MERN stack</span> with full user
+        authentication, guest accounts, and database access. Unit and
+        Integration tests done using{' '}
+        <span className="highlight">React Testing Library</span>.
+      </span>
+    ),
+    technology:
+      'React ⸱ Styled Components ⸱ Framer Motion ⸱ Recharts ⸱ Node ⸱ Express ⸱ MongoDB',
+    image: YumFood,
+    github: 'https://github.com/sjaga003/Yum_Food_Website',
+    live: 'https://cranky-bhabha-60b7b6.netlify.app/',
+  },
   {
     title: 'The Covid Tracker',
     description: (

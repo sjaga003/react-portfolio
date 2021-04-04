@@ -8,6 +8,21 @@ import MatrixRow from './MatrixRow';
 
 const List = [
   {
+    year: 2021,
+    title: 'Yum',
+    technology: [
+      'React',
+      'Styled Components',
+      'Framer Motion',
+      'Recharts',
+      'Node',
+      'Express',
+      'MongoDB',
+    ],
+    github: 'https://github.com/sjaga003/Yum_Food_Website',
+    live: 'https://cranky-bhabha-60b7b6.netlify.app/',
+  },
+  {
     year: 2020,
     title: 'The Covid Tracker',
     technology: ['React', 'Chart.js', 'Netlify', 'COVID Tracking API'],

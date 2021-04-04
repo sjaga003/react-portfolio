@@ -1,8 +1,7 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 import Resume from '../files/Suhas_Jagannath_Resume.pdf';
-import { Link } from 'react-scroll';
 
 const containerFadeIn = {
   show: {
@@ -178,41 +177,41 @@ const SubHeading = styled(motion.div)`
   }
 `;
 
-const EmailButton = styled(motion.button)`
-  margin-right: 24px;
-  border: 2px solid var(--highlight-color);
-  border-radius: 8px;
-  font-family: 'Fira Code', monospace;
-  color: var(--highlight-color);
-  background: none;
-  padding: 1rem 1.75rem;
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  text-decoration: none;
-  &:hover {
-    cursor: pointer;
-  }
-  @media (max-width: 575.98px) {
-    padding: 1rem 1rem;
-    font-size: var(--fs-xs);
-  }
+// const EmailButton = styled(motion.button)`
+//   margin-right: 24px;
+//   border: 2px solid var(--highlight-color);
+//   border-radius: 8px;
+//   font-family: 'Fira Code', monospace;
+//   color: var(--highlight-color);
+//   background: none;
+//   padding: 1rem 1.75rem;
+//   font-size: var(--fs-sm);
+//   font-weight: 600;
+//   text-decoration: none;
+//   &:hover {
+//     cursor: pointer;
+//   }
+//   @media (max-width: 575.98px) {
+//     padding: 1rem 1rem;
+//     font-size: var(--fs-xs);
+//   }
 
-  // Small devices (landscape phones, less than 768px)
-  @media (max-width: 767.98px) {
-  }
+//   // Small devices (landscape phones, less than 768px)
+//   @media (max-width: 767.98px) {
+//   }
 
-  // Medium devices (tablets, less than 992px)
-  @media (max-width: 991.98px) {
-  }
+//   // Medium devices (tablets, less than 992px)
+//   @media (max-width: 991.98px) {
+//   }
 
-  // Large devices (desktops, less than 1200px)
-  @media (max-width: 1199.98px) {
-  }
-  @media (min-width: 2000px) {
-    //Do something like this to increase font sizes for 4k
-    font-size: calc(var(--fs-sm) * 1.2);
-  }
-`;
+//   // Large devices (desktops, less than 1200px)
+//   @media (max-width: 1199.98px) {
+//   }
+//   @media (min-width: 2000px) {
+//     //Do something like this to increase font sizes for 4k
+//     font-size: calc(var(--fs-sm) * 1.2);
+//   }
+// `;
 
 const ResumeButton = styled(motion.a)`
   margin-right: 1rem;
