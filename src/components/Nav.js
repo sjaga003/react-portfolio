@@ -359,6 +359,10 @@ const Navigation = styled(motion.nav)`
   // Large devices (desktops, less than 1200px)
   @media (max-width: 1199.98px) {
   }
+  @media (min-width: 2000px) {
+    //Do something like this to increase font sizes for 4k
+    padding: 12px 600px;
+  }
 `;
 
 const NavHeadings = styled(motion.ul)`
@@ -388,6 +392,10 @@ const ALink = styled.a`
   color: inherit;
   text-decoration: none;
   display: inherit;
+  margin-left: 20px;
+  & > li {
+    margin-left: 0px;
+  }
 `;
 
 const NavHeading = styled(motion.li)`

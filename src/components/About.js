@@ -83,8 +83,8 @@ const About = ({ isMobile }) => {
       <Hello variants={aboutFadeIn}>Hello, my name is</Hello>
       <Name variants={aboutFadeIn}>Suhas Jagannath</Name>
       <SubHeading variants={aboutFadeIn}>
-        I'm a Computer Engineer in my final quarter at UC Riverside. I
-        specialize in front end web development and embedded system design.
+        I'm a Computer Engineer graduate from UC Riverside. I specialize in
+        front end web development and embedded system design.
       </SubHeading>
       <ButtonContainer variants={aboutFadeIn}>
         <ResumeButton
@@ -98,7 +98,7 @@ const About = ({ isMobile }) => {
           View Resume
         </ResumeButton>
 
-        <Link
+        {/* <Link
           to="ContactSection"
           smooth={true}
           duration={500}
@@ -112,7 +112,7 @@ const About = ({ isMobile }) => {
           >
             Contact Me
           </EmailButton>
-        </Link>
+        </Link> */}
       </ButtonContainer>
     </AboutSection>
   );
@@ -120,6 +120,7 @@ const About = ({ isMobile }) => {
 
 const AboutSection = styled(motion.div)`
   min-height: 80vh;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -177,7 +178,7 @@ const SubHeading = styled(motion.div)`
   }
 `;
 
-const EmailButton = styled(motion.span)`
+const EmailButton = styled(motion.button)`
   margin-right: 24px;
   border: 2px solid var(--highlight-color);
   border-radius: 8px;
@@ -214,7 +215,7 @@ const EmailButton = styled(motion.span)`
 `;
 
 const ResumeButton = styled(motion.a)`
-  margin-right: 24px;
+  margin-right: 1rem;
   border: 2px solid var(--highlight-color);
   border-radius: 8px;
   font-family: 'Fira Code', monospace;
@@ -224,6 +225,7 @@ const ResumeButton = styled(motion.a)`
   font-size: var(--fs-sm);
   font-weight: 600;
   text-decoration: none;
+  margin-bottom: 1rem;
   &:hover {
     cursor: pointer;
   }
@@ -251,6 +253,8 @@ const ResumeButton = styled(motion.a)`
 
 const ButtonContainer = styled(motion.div)`
   padding: 1rem 0rem;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export default About;
