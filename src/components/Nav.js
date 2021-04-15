@@ -12,6 +12,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
 import MobileNav from '../components/MobileNav';
 import { Link } from 'react-scroll';
+import Resume from 'file-loader?name=[name].[ext]!../files/Suhas_Jagannath_Resume.pdf';
 
 const containerFadeIn = {
   show: {
@@ -289,11 +290,7 @@ const Nav = ({ isMobile, setTheme, theme }) => {
                 <FontAwesomeIcon icon={faLinkedin} />
               </NavHeadingIcon>
             </ALink>
-            <ALink
-              href={'/static/Suhas_Jagannath_Resume.pdf'}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <ALink href={Resume} target="_blank" rel="noopener noreferrer">
               <NavHeadingIcon
                 onHoverStart={(event, info) => {
                   event.target.style.color = 'var(--highlight-color)';
