@@ -11,7 +11,6 @@ This site was built to be a hub for all my projects and a display of my work so 
 Technologies Used:
 
 - React
-- React-Responsive
 - Styled Components
 - Framer Motion
 - Gatsby

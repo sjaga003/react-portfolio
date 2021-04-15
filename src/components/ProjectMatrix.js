@@ -23,6 +23,19 @@ const List = [
     live: 'https://cranky-bhabha-60b7b6.netlify.app/',
   },
   {
+    year: 2021,
+    title: 'Personal Portfolio Website',
+    technology: [
+      'React',
+      'Styled Components',
+      'Framer Motion',
+      'Gatsby',
+      'Netlify',
+    ],
+    github: 'https://github.com/sjaga003/react-portfolio',
+    live: 'https://www.suhasjagannath.com/',
+  },
+  {
     year: 2020,
     title: 'The Covid Tracker',
     technology: ['React', 'Chart.js', 'Netlify', 'COVID Tracking API'],
