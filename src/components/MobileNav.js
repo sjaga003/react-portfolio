@@ -13,7 +13,6 @@ import styled from 'styled-components';
 import { AnimatePresence, motion } from 'framer-motion';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-scroll';
-import Resume from 'file-loader?name=[name].[ext]!../files/Suhas_Jagannath_Resume.pdf';
 
 const burgerVariant = {
   intitial: {
@@ -221,7 +220,11 @@ const MobileNav = ({ navOpen, setNavOpen }) => {
                     <NavText>LinkedIn</NavText>
                   </ListItem>
                 </Icon>
-                <Icon href={Resume} target="_blank" rel="noopener noreferrer">
+                <Icon
+                  href={`https://drive.google.com/file/d/16OMR4sdDAPrOAirWPScJk4OsIKgAOfB8/view?usp=sharing`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <ListItem
                     variants={hoverVariant}
                     initial={'show'}

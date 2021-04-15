@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
-import Resume from 'file-loader?name=[name].[ext]!../files/Suhas_Jagannath_Resume.pdf';
 
 const containerFadeIn = {
   show: {
@@ -87,7 +86,7 @@ const About = ({ isMobile }) => {
       </SubHeading>
       <ButtonContainer variants={aboutFadeIn}>
         <ResumeButton
-          href={Resume}
+          href={`https://drive.google.com/file/d/16OMR4sdDAPrOAirWPScJk4OsIKgAOfB8/view?usp=sharing`}
           target="_blank"
           rel="noopener noreferrer"
           initial="show"
