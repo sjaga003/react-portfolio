@@ -1,48 +1,22 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+![GIF](media/PersonalWebsite.gif)
 
-## 🚀 Quick start
+Personal website and developer portfolio for Suhas Jagannath. Includes resume, social links, and highlights of personal projects across many different tech stacks. View the live site [here](https://www.suhasjagannath.com)!
 
-1.  **Create a Gatsby site.**
+## Overview
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+This site was built to be a hub for all my projects and a display of my work so far as a developer. Here you can get a simple and clean glance into my journey as a software engineer.
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+## How I Built It
 
-2.  **Start developing.**
+Technologies Used:
 
-    Navigate into your new site’s directory and start it up.
+- React
+- React-Responsive
+- Styled Components
+- Framer Motion
+- Gatsby
+- Netlify
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+## Future Developments
 
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+I hope to continue to look more into how Gatsby uses graphql, and update it with my projects as time goes on.
