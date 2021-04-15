@@ -34,6 +34,18 @@ const IndexPage = () => {
           <title>Suhas Jagannath</title>
           <link rel="icon" href={favicon} />
           <meta name="theme-color" content="#171c28" />
+          <meta
+            name="title"
+            property="og:title"
+            content="Suhas Jagannath's Website"
+          />
+          <meta property="og:type" content="website" />
+          <meta
+            name="description"
+            property="og:description"
+            content="Personal website and developer portfolio for Suhas Jagannath. Includes resume, social links, and highlights of personal projects across many different tech stacks."
+          />
+          <meta name="author" content="Suhas Jagannath" />
         </Helmet>
         <Nav theme={theme} setTheme={setTheme} isMobile={isMobile} />
         <ProjectMatrix
