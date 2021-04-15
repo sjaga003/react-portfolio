@@ -45,6 +45,11 @@ const IndexPage = () => {
             property="og:description"
             content="Personal website and developer portfolio for Suhas Jagannath. Includes resume, social links, and highlights of personal projects across many different tech stacks."
           />
+          <meta
+            name="image"
+            property="og:image"
+            content="https://cdn.discordapp.com/attachments/260521636795645962/832307093876899860/Untitled.png"
+          />
           <meta name="author" content="Suhas Jagannath" />
         </Helmet>
         <Nav theme={theme} setTheme={setTheme} isMobile={isMobile} />
