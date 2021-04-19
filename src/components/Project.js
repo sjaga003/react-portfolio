@@ -252,9 +252,12 @@ const ImageContainer = styled(motion.a)`
 const ProjectInfo = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
   max-width: 450px;
   z-index: 2;
+  & > * {
+    margin-bottom: 10px;
+  }
   ${({ index }) =>
     index % 2
       ? css`
@@ -310,7 +313,7 @@ const ProjectTitle = styled.h2`
 const ProjectDescription = styled.div`
   font-size: var(--fs-sm);
   padding-bottom: 8px;
-  line-height: 22px;
+  line-height: 1.6;
   width: inherit;
   @media (max-width: 575.98px) {
     width: inherit;
@@ -343,6 +346,7 @@ const ProjectTechnology = styled.div`
   padding-bottom: 8px;
   font-size: var(--fs-xs);
   color: var(--highlight-color);
+  line-height: 1.6;
   @media (max-width: 767.98px) {
     font-size: calc(var(--fs-xs) * 1.2);
   }
@@ -357,7 +361,7 @@ const ProjectIcons = styled.div``;
 const IconContainer = styled(motion.a)`
   display: inline-block;
   cursor: pointer;
-  margin-right: 12px;
+  margin-right: 18px;
   color: inherit;
 `;
 
