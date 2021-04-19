@@ -9,6 +9,13 @@ import MatrixRow from './MatrixRow';
 const List = [
   {
     year: 2021,
+    title: 'BankSafe',
+    technology: ['React', 'TailwindCSS'],
+    github: 'https://github.com/sjaga003/tailwind-smart-banking',
+    live: 'https://admiring-darwin-606588.netlify.app/',
+  },
+  {
+    year: 2021,
     title: 'Yum',
     technology: [
       'React',
