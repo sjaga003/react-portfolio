@@ -1,10 +1,8 @@
-import * as React from 'react';
 import { Link } from 'gatsby';
+import * as React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import Footer from '../components/Footer';
-import Nav from '../components/Nav';
 import { darkTheme, GlobalStyle } from '../components/GlobalStyles';
-import { useMediaQuery } from 'react-responsive';
 
 // markup
 const NotFoundPage = () => {
