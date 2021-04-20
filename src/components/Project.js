@@ -97,7 +97,7 @@ const Project = ({ index, project, isMobile }) => {
         whileHover={isMobile ? '' : 'hover'}
         index={index}
       >
-        <ImageBackground></ImageBackground>
+        <ImageBackground index={index}></ImageBackground>
 
         <ProjectImage
           draggable={false}
@@ -199,6 +199,16 @@ const ImageBackground = styled.div`
   margin-top: 5px;
   position: absolute;
   z-index: -1;
+
+  ${({ index }) =>
+    index % 2
+      ? css`
+          right: 0;
+        `
+      : css`
+          left: 0;
+        `}
+
   @media (max-width: 575.98px) {
   }
 
@@ -221,6 +231,7 @@ const ImageContainer = styled(motion.a)`
   width: 515px;
   height: 320px;
   cursor: 'pointer';
+  position: relative;
   ${({ index }) =>
     index % 2
       ? css`
