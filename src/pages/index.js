@@ -48,7 +48,7 @@ const IndexPage = () => {
           <meta
             name="image"
             property="og:image"
-            content="https://cdn.discordapp.com/attachments/260521636795645962/832307093876899860/Untitled.png"
+            content="src\images\imageportfolio.png"
           />
           <meta name="author" content="Suhas Jagannath" />
         </Helmet>

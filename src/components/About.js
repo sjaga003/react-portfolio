@@ -81,12 +81,11 @@ const About = ({ isMobile }) => {
       <Hello variants={aboutFadeIn}>Hello, my name is</Hello>
       <Name variants={aboutFadeIn}>Suhas Jagannath</Name>
       <SubHeading variants={aboutFadeIn}>
-        I'm a Computer Engineer graduate from UC Riverside. I specialize in
-        front end web development and embedded system design.
+        I'm a Lead Software Engineer who builds full-stack, customer-facing products and helps teams move faster with better experimentation.
       </SubHeading>
       <ButtonContainer variants={aboutFadeIn}>
         <ResumeButton
-          href={`https://drive.google.com/file/d/16OMR4sdDAPrOAirWPScJk4OsIKgAOfB8/view?usp=sharing`}
+          href={`https://drive.google.com/file/d/1XiEVSHceOVKU5yVAFau30KlkqI3Ynell/view?usp=sharing`}
           target="_blank"
           rel="noopener noreferrer"
           initial="show"
